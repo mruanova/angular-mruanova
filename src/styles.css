@@ -1,1 +1,311 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Small sized screens */
+@media (max-width: 480px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+/* Medium sized screens */
+@media only screen and (min-width: 481px) {
+    .col-md-6 {
+        width: 50%;
+    }
+    .col-md-12 {
+        width: 100%;
+    }
+}
+/* Large sized screens */
+@media only screen and (min-width: 1024px) {
+    .col-lg-4 {
+        width: 33.333333%;
+    }
+}.flex{
+    display: flex;
+    width: 100%;
+}
+.flex1{
+    flex:1;
+}
+.white{
+    background-color: white;
+}
+.box {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    height: 533px;
+    padding: 0;
+}
+body {
+    font-family: 'Franklin Gothic';
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    background-color: #f4f7f6 !important;
+}
+.header {
+    width: 100%;
+    height: 90px;
+    color: white;
+}
+.nav
+{
+	width: 75px;
+	display: inline-block;
+    margin-top: 15px;
+}
+.button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+.h1 {
+    color: darkred;
+}
+.h2 {
+    color: darkgoldenrod;
+}
+.h3 {
+    color: darkcyan;
+}
+.main {
+    width: 100%;
+}
+/* latin */
+@font-face {
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+.link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Varela';
+}
+.link1 {
+    color: darkcyan;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+.link2 {
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+.link3 {
+    color: darkred;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+.mau {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 85px;
+    text-shadow: 1px 1px #000000;
+    font-family: 'Sarpanch', sans-serif;
+    padding: 0 5px 0 5px;
+}
+.mauricioruanovahurtado {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: white;
+    font-size: 12px;
+    font-family: 'Varela';
+    text-shadow: 1px 1px #000000;
+}
+.skill {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 95px;
+    left: 210px;
+    text-shadow: 1px 1px #000000;
+    text-align: left;
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+}
+.skill1 {
+    background-color: purple;
+    top: 10px;
+}
+.skill2 {
+    background-color: darkviolet;
+    top: 35px;
+}
+.skill3 {
+    background-color: navy;
+    top: 60px;
+}
+.skill4 {
+    background-color: darkcyan;
+    top: 85px;
+}
+.skill5 {
+    background-color: green;
+    top: 110px;
+}
+.skill6 {
+    background-color: darkgoldenrod;
+    top: 135px;
+}
+.skill7 {
+    background-color: orangered;
+    top: 160px;
+}
+.skill8 {
+    background-color: maroon;
+    top: 185px;
+}
+.skill9 {
+    background-color: saddlebrown;
+    top: 210px;
+    left: 250px;
+    width: 60px;
+}
+.skill0 {
+    background-color: black;
+    top: 235px;
+    left: 250px;
+    width: 60px;
+}
+.icon {
+    position: absolute;
+    top: 235px;
+    left: 250px;
+    height: 60px;
+    width: 60px;
+}
+.job {
+    position: absolute;
+    color: white;
+    background-color: darkcyan;
+    padding: 12px 5px 5px 5px;
+    border-radius: 5px;
+    border:1px solid white;
+    font-family: 'Varela';
+    font-size: 12px;
+    height: 160px;
+    width: 290px;
+    top: 285px;
+    left: 10px;
+}
+.portfolio {
+    position: absolute;
+    top: 475px;
+    left: 0px;
+    color: white;
+    background-color: black;
+    opacity: 0.6;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px 5px 5px 5px;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+.footer {
+    padding: 0 5px 0 5px;
+    font-size: 0.8em;
+    font-family: 'Varela';
+}
+.about {
+    font-size: 0.8em;
+    width: 320px;
+    text-align: left;
+    padding: 10px 0 0 5px;
+    font-family: 'Varela';
+}
+.logo{
+    float:left;
+    margin-right: 5px;
+    height: 50px;
+    width: 50px;
+}
+.cb{
+    clear:both;
+}
+.company {
+    color: darkgoldenrod;
+    font-weight:bold;
+    font-size:0.75em;
+}
+.position {
+    color: black;
+    font-size:0.75em;
+}
+.address {
+    color: dimgray;
+    font-size:0.75em;
+}
+.address-link {
+    color: blue;
+    font-size:0.75em;
+    text-decoration: underline;
+}
+.website {
+    color: darkcyan;
+    font-size:0.75em;
+}
+#project_list {
+    margin-left: -35px;
+    width: 350px;
+}
+#project_list > li {
+	list-style-type: none;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid silver;
+    text-align: left;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 260px; /* Could be more or less, depending on screen size */
+    text-align: left;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
