@@ -1,0 +1,8 @@
+
+li {
+	list-style-type: none;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid silver;
+    text-align: left;
+}

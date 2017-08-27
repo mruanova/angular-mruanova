@@ -229,7 +229,7 @@ body {
     font-family: 'Varela';
 }
 .about {
-    font-size:11.2px;
+    font-size:14px;
     width: 320px;
     text-align: left;
     padding: 10px 0 0 5px;
@@ -269,13 +269,6 @@ body {
 ul {
     margin-left: -35px;
     width: 320px;
-}
-li {
-	list-style-type: none;
-    margin-top: 5px;
-    padding-top: 5px;
-    border-top: 1px solid silver;
-    text-align: left;
 }
 .modal {
     display: none; /* Hidden by default */
