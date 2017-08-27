@@ -267,7 +267,7 @@ body {
     font-size:10.5px;
 }
 ul {
-    margin-left: -35px;
+    margin: 15px 0 5px -35px;
     width: 320px;
 }
 .modal {
