@@ -2,7 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
-## Development server
+# Upgrade to Angular 5
+
+## first step
+npm install @angular/{animations,common,compiler,compiler-cli,core,forms,http,platform-browser,platform-browser-dynamic,platform-server,router}@'^5.0.0' typescript@2.4.2 rxjs@'^5.5.2'
+
+## second step
+npm install typescript@2.4.2 --save-exact
+
+## link
+https://angular-update-guide.firebaseapp.com/
+
+# Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
