@@ -37,3 +37,21 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## global angular cli
+npm install --save-dev @angular/cli@latest
+
+## local angular cli
+npm install -g @angular/cli
+
+## github pages
+npm install -g angular-cli-ghpages
+
+## base-href
+ng build --prod --base-href https://mruanova.github.io/angular-mruanova/
+
+## Successfully published!
+ngh
+
+## go to
+https://mruanova.github.io/angular-mruanova
