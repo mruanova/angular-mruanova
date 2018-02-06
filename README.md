@@ -55,3 +55,6 @@ ngh
 
 ## go to
 https://mruanova.github.io/angular-mruanova
+
+## S3
+ALIAS s3-website-us-west-2.amazonaws.com. (z3bj6k6riion7m)
