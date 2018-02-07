@@ -31,7 +31,7 @@ body {
     box-shadow: 0 3px 5px 1px rgba(0,0,0,.3);
     display: inline-block;
     width: 320px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 /*
 .heading {
@@ -48,7 +48,7 @@ body {
 {
 	width: 75px;
 	display: inline-block;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 .navbutton:hover
 {
