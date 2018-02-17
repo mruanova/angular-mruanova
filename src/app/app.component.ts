@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
-declare var google: any;
+declare const google: any;
+const longitude = 41.8838158;
+const latitude = -87.6415424;
+const zoom = 14;
 let map;
 
 @Component({
@@ -16,6 +19,7 @@ export class AppComponent implements OnInit {
   promise;
 
   constructor(private _apiService: ApiService) {
+    // dependency injection
   }
 
   // get all the projects from the api
@@ -42,9 +46,9 @@ export class AppComponent implements OnInit {
   // initialize google maps
   initialize() {
     this.geocoder = new google.maps.Geocoder();
-    const latlng = new google.maps.LatLng(41.8838158, -87.6415424);
+    const latlng = new google.maps.LatLng(latitude, longitude);
     const mapOptions = {
-      zoom: 14,
+      zoom: zoom,
       center: latlng
     };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
