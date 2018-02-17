@@ -11,195 +11,453 @@
     <title>Mauricio Ruanova-Hurtado</title>
     <base href="/">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU"></script>
+    <style>
+        @font-face {
+            font-family: 'Varela';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+        }
+
+        * {
+            font-family: 'Varela';
+        }
+
+        .box {
+            background-color: white;
+            position: relative;
+            vertical-align: top;
+            display: inline-block;
+            height: 533px;
+            width: 320px;
+            padding: 0;
+        }
+
+        body {
+            background-color: #4d4d4d !important;
+            font-family: 'Franklin Gothic';
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .top {
+            background-color: #f3f3f3 !important;
+        }
+
+        .toolbar {
+            background-color: white;
+            box-shadow: 0 3px 5px 1px rgba(0, 0, 0, .3);
+            display: inline-block;
+            margin-bottom: 7px;
+            text-align: center;
+        }
+
+        .career {
+            color: #4d4d4d;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbutton {
+            width: 75px;
+            display: inline-block;
+            padding-top: 5px;
+        }
+
+        .navbutton:hover {
+            background-color: #f3f3f3;
+        }
+
+        .button {
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+        }
+
+        .banner {
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .main {
+            width: 100%;
+            margin: 5px 0 5px 0;
+        }
+
+        .link {
+            color: #24313f;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .link1 {
+            color: darkcyan;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .link2 {
+            color: darkgoldenrod;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .link3 {
+            color: darkred;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .mau {
+            position: absolute;
+            top: -25px;
+            left: 0px;
+            color: white;
+            font-weight: bold;
+            font-size: 85px;
+            text-shadow: 1px 1px #000000;
+            font-family: 'Sarpanch', sans-serif;
+            padding: 0 5px 0 5px;
+        }
+
+        .mauricioruanovahurtado {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            color: white;
+            font-size: 12px;
+            text-shadow: 1px 1px #000000;
+        }
+
+        #selector {
+            border: 2px solid white;
+            position: absolute;
+            top: 5px;
+            left: 210px;
+            height: 15px;
+            width: 105px;
+            z-index: 1;
+        }
+
+        .skill {
+            font-weight: bold;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            height: 15px;
+            width: 99px;
+            left: 210px;
+            text-shadow: 1px 1px #000000;
+            text-align: left;
+            position: absolute;
+            color: white;
+            padding: 0 5px 0 5px;
+        }
+
+        .skill1 {
+            background-color: purple;
+            top: 5px;
+        }
+
+        .skill2 {
+            background-color: navy;
+            top: 25px;
+        }
+
+        .skill3 {
+            background-color: darkcyan;
+            top: 45px;
+        }
+
+        .skill4 {
+            background-color: green;
+            top: 65px;
+        }
+
+        .skill5 {
+            background-color: darkgoldenrod;
+            top: 85px;
+        }
+
+        .skill6 {
+            background-color: orangered;
+            top: 105px;
+        }
+
+        .skill7 {
+            background-color: maroon;
+            top: 125px;
+        }
+
+        .skill8 {
+            background-color: #24313f;
+            top: 145px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 235px;
+            left: 250px;
+            height: 60px;
+            width: 60px;
+        }
+
+        .job {
+            position: absolute;
+            color: #24313f;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #24313f;
+            font-size: 12px;
+            height: 135px;
+            width: 305px;
+            top: 325px;
+            left: 5px;
+        }
+
+        .portfolio {
+            position: absolute;
+            top: 490px;
+            left: 0px;
+            color: white;
+            background-color: #24313f;
+            opacity: 0.6;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 5px 5px 5px 5px;
+        }
+
+        #map {
+            height: 533px;
+            width: 320px;
+        }
+
+        .projects {
+            height: 533px;
+            width: 320px;
+        }
+
+        .overflow {
+            overflow-y: scroll;
+        }
+
+        .about {
+            font-size: 0.8em;
+            width: 320px;
+            text-align: left;
+            padding: 5px 0 0 5px;
+        }
+
+        .logo {
+            float: left;
+            margin-right: 5px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .company {
+            color: darkgoldenrod;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .position {
+            color: #24313f;
+            font-size: 11px;
+        }
+
+        .address {
+            color: dimgray;
+            font-size: 11px;
+        }
+
+        .address-link {
+            color: blue;
+            font-size: 11px;
+            text-decoration: underline;
+        }
+
+        .website {
+            color: darkcyan;
+            font-size: 11px;
+        }
+
+        ul {
+            margin-left: -35px;
+            width: 310px;
+        }
+
+        ul>li {
+            list-style-type: none;
+            margin-top: 5px;
+            padding: 5px;
+            border-top: 1px solid silver;
+            width: 300px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        ul>li:hover {
+            background-color: #f3f3f3;
+        }
+
+        .item>img {
+            height: 100px !important;
+            width: 100%;
+        }
+
+        .footer {
+            color: #888;
+            font-size: 11px;
+        }
+
+        .cb {
+            clear: both;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="toolbar">
-        <div class="navbutton dropdown">
-            <a target="_self" class="link" title="demo" href="#" id="about">
-                <img src="assets/img/about.jpg" alt="demo" class="button"> Demo
-            </a>
-            <div class="dropdown-content">
-                <a target="_blank" class="link" title="demo" href="https://youtu.be/qqfZpzWPw9w" id="about">
-                    Zillow
+    <div class="top">
+        <div class="toolbar">
+            <div class="navbutton dropdown">
+                <a target="_self" class="link" title="demo" href="#" id="about">
+                    <img src="assets/img/about.jpg" alt="demo" class="button"> Demo
+                </a>
+                <div class="dropdown-content">
+                    <a target="_blank" class="link" title="demo" href="https://youtu.be/qqfZpzWPw9w" id="about">
+                        Zillow
+                    </a>
+                </div>
+            </div>
+            <div class="navbutton">
+                <a target="_blank" class="link" title="linkedin" href="https://www.linkedin.com/in/mruanova">
+                    <img src="assets/img/linkedin.png" alt="Linkedin" class="button"> Linkedin
+                </a>
+            </div>
+            <div class="navbutton">
+                <a target="_blank" class="link" title="github" href="https://github.com/mruanova">
+                    <img src="assets/img/github.png" alt="Github" class="button"> Github
+                </a>
+            </div>
+            <div class="navbutton">
+                <a target="_blank" class="link" title="blog" href="https://medium.com/@moreissues">
+                    <img src="assets/img/email.png" alt="blog" class="button">
+                    <br>Blog
                 </a>
             </div>
         </div>
-        <div class="navbutton">
-            <a target="_blank" class="link" title="linkedin" href="https://www.linkedin.com/in/mruanova">
-                <img src="assets/img/linkedin.png" alt="Linkedin" class="button"> Linkedin
-            </a>
-        </div>
-        <div class="navbutton">
-            <a target="_blank" class="link" title="github" href="https://github.com/mruanova">
-                <img src="assets/img/github.png" alt="Github" class="button"> Github
-            </a>
-        </div>
-        <div class="navbutton">
-            <a target="_blank" class="link" title="blog" href="https://medium.com/@moreissues">
-                <img src="assets/img/email.png" alt="blog" class="button">
-                <br>Blog
-            </a>
-        </div>
-    </div>
-    <!--
-    <div class="heading">
-        <span class="career">CAREER PORTFOLIO</span>
-    </div>
-    -->
-    <!--carousel-->
-    <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="assets/img/banner1.png" alt="one">
-                    <div class="carousel-caption">
-                        <p class="banner">Microsoft Certified Professional</p>
+        <div class="career">CAREER PORTFOLIO</div>
+        <div class="main">
+            <div class="box">
+                <img id="photo" src="assets/img/mau.jpg" alt="mau">
+                <div class="mau">mau</div>
+                <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
+                <div class="skill skill1">ASP.Net C#</div>
+                <div class="skill skill2">jQuery</div>
+                <div class="skill skill3">React.js</div>
+                <div class="skill skill4">Node.js</div>
+                <div class="skill skill5">Python</div>
+                <div class="skill skill6">Vue.js</div>
+                <div class="skill skill7">Angular</div>
+                <div id="selector"></div>
+                <div id="job">
+                    <div class='job'>
+                        <p>This website uses Angular 5 in the front-end to request all the projects from a RESTful web service
+                            API with an Http Get method and render the JSON response in a list and a map.</p>
+                        <p>In the back-end an AWS API Getway executes a serverless Lambda function in Node.js that retrieves
+                            data from DynamoDB.</p>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="assets/img/banner2.png" alt="two">
-                    <div class="carousel-caption">
-                        <p class="banner">Front-End Web Developer</p>
-                    </div>
+                <div class="portfolio">Career Portfolio</div>
+            </div>
+            <div class="box">
+                <div class="about">
+                    Click on a project from the list to update the map:
                 </div>
-                <div class="item">
-                    <img src="assets/img/banner3.png" alt="three">
-                    <div class="carousel-caption">
-                        <p class="banner">Full Stack Software Engineer</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="assets/img/banner4.png" alt="three">
-                    <div class="carousel-caption">
-                        <p class="banner">BS in Computer Systems Engineering</p>
-                    </div>
+                <div class="projects">
+                    <ul>
+                        <app-root></app-root>
+                    </ul>
                 </div>
             </div>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-    <div class="main">
-        <div class="box">
-            <img id="photo" src="assets/img/mau.jpg" alt="mau">
-            <div class="mau">mau</div>
-            <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
-            <div class="skill skill1">ASP.Net C#</div>
-            <div class="skill skill2">jQuery</div>
-            <div class="skill skill3">React.js</div>
-            <div class="skill skill4">Node.js</div>
-            <div class="skill skill5">Python</div>
-            <div class="skill skill6">Vue.js</div>
-            <div class="skill skill7">Angular</div>
-            <div id="selector"></div>
-            <div id="job">
-                <div class='job'>
-                    <p>This website uses Angular 5 in the front-end to request all the projects from a RESTful web service API
-                        with an Http Get method and render the JSON response in a list and a map.</p>
-                    <p>In the back-end an AWS API Getway executes a serverless Lambda function in Node.js that retrieves data
-                        from DynamoDB.</p>
+            <div class="box">
+                <div id="map"></div>
+            </div>
+            <div class="box">
+                <div class="about">
+                    Click on a repository from the list to visit github:
                 </div>
-            </div>
-            <div class="portfolio">Career Portfolio</div>
-        </div>
-        <div class="box">
-            <div class="about">
-                Click on a project from the list to update the map:
-            </div>
-            <div class="projects">
                 <ul>
-                    <app-root></app-root>
+                    <li>
+                        <div class='company'>Angular 5 mruanova.com</div>
+                        <div class='position'>Career Portfolio in ANGULAR 5</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-mruanova</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>Angular 5 Products</div>
+                        <div class='position'>Online Store using ANGULAR 5 routes</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-products</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>Zillow</div>
+                        <div class='position'>Python Django Sqlite</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/zillow">https://github.com/mruanova/zillow</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>vue.js mruanova.com</div>
+                        <div class='position'>Career Portfolio in VUEJS</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/vue-mruanova">https://github.com/mruanova/vue-mruanova</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>React.js mruanova.com</div>
+                        <div class='position'>Career Portfolio in REACTJS</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/react-mruanova">https://github.com/mruanova/react-mruanova</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>angular.js mruanova.com</div>
+                        <div class='position'>Career Portfolio in ANGULARJS</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/angularjs-mruanova">https://github.com/mruanova/angularjs-mruanova</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>Backbone Underscore mruanova.com</div>
+                        <div class='position'>Career Portfolio in Backbone Underscore</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/backbone-mruanova">https://github.com/mruanova/backbone-mruanova</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='company'>jQuery mruanova.com</div>
+                        <div class='position'>Career Portfolio in JQUERY</div>
+                        <div class='address-link'>
+                            <a href="https://github.com/mruanova/jquery-mruanova">https://github.com/mruanova/jquery-mruanova</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="box">
-            <div id="map"></div>
-        </div>
-        <div class="box">
-            <div class="about">
-                Click on a repository from the list to visit github:
-            </div>
-            <ul>
-                <li>
-                    <div class='company'>Angular 5 mruanova.com</div>
-                    <div class='position'>Career Portfolio in ANGULAR 5</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-mruanova</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>Angular 5 Products</div>
-                    <div class='position'>Online Store using ANGULAR 5 routes</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-products</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>Zillow</div>
-                    <div class='position'>Python Django Sqlite</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/zillow">https://github.com/mruanova/zillow</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>vue.js mruanova.com</div>
-                    <div class='position'>Career Portfolio in VUEJS</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/vue-mruanova">https://github.com/mruanova/vue-mruanova</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>React.js mruanova.com</div>
-                    <div class='position'>Career Portfolio in REACTJS</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/react-mruanova">https://github.com/mruanova/react-mruanova</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>angular.js mruanova.com</div>
-                    <div class='position'>Career Portfolio in ANGULARJS</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/angularjs-mruanova">https://github.com/mruanova/angularjs-mruanova</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>Backbone Underscore mruanova.com</div>
-                    <div class='position'>Career Portfolio in Backbone Underscore</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/backbone-mruanova">https://github.com/mruanova/backbone-mruanova</a>
-                    </div>
-                </li>
-                <li>
-                    <div class='company'>jQuery mruanova.com</div>
-                    <div class='position'>Career Portfolio in JQUERY</div>
-                    <div class='address-link'>
-                        <a href="https://github.com/mruanova/jquery-mruanova">https://github.com/mruanova/jquery-mruanova</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
     </div>
     <div class="footer">
-        <span> © 2018 Mauricio Ruanova-Hurtado </span>
-        <span> - </span>
-        <span> All rights reserved. </span>
+        <span> © 2018 - All rights reserved. </span>
     </div>
     <!--modal-->
     <div id="myModal" class="modal">
@@ -232,11 +490,9 @@
         </div>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Sarpanch:900" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/animation.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU"></script>
 </body>
 
 </html>
