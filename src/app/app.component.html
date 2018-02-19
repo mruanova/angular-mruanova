@@ -1,9 +1,164 @@
-<li *ngFor="let project of projects">
-  <span (click)="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
-      <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
-      <div class='company'>{{project.Name}}</div>
-      <div class='position'>{{project.Position}}</div>
-      <div class='address-link'>{{project.Address}}</div>
-      <div class="cb"></div>
-    </span>
-</li>
+<div class="top">
+  <div class="toolbar">
+    <div class="navbutton dropdown">
+      <a target="_self" class="link" title="demo" href="#" id="about">
+        <img src="assets/img/about.jpg" alt="demo" class="button"> Demo
+      </a>
+      <div class="dropdown-content">
+        <a target="_blank" class="link" title="demo" href="https://youtu.be/qqfZpzWPw9w" id="about">
+          Zillow
+        </a>
+      </div>
+    </div>
+    <div class="navbutton">
+      <a target="_blank" class="link" title="linkedin" href="https://www.linkedin.com/in/mruanova">
+        <img src="assets/img/linkedin.png" alt="Linkedin" class="button"> Linkedin
+      </a>
+    </div>
+    <div class="navbutton">
+      <a target="_blank" class="link" title="github" href="https://github.com/mruanova">
+        <img src="assets/img/github.png" alt="Github" class="button"> Github
+      </a>
+    </div>
+    <div class="navbutton">
+      <a target="_blank" class="link" title="blog" href="https://medium.com/@moreissues">
+        <img src="assets/img/email.png" alt="blog" class="button">
+        <br>Blog
+      </a>
+    </div>
+  </div>
+  <div class="career">CAREER PORTFOLIO</div>
+  <div class="main">
+    <div class="box">
+      <img id="photo" src="assets/img/mau.jpg" alt="mau">
+      <div class="mau">mau</div>
+      <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
+      <div class="skill skill1">ASP.Net C#</div>
+      <div class="skill skill2">jQuery</div>
+      <div class="skill skill3">React.js</div>
+      <div class="skill skill4">Node.js</div>
+      <div class="skill skill5">Python</div>
+      <div class="skill skill6">Vue.js</div>
+      <div class="skill skill7">Angular</div>
+      <div id="selector"></div>
+      <div id="job">
+        <div class='job'>
+          <p>This website uses Angular 5 in the front-end to request all the projects from a RESTful web service API with an
+            Http Get method and render the JSON response in a list and a map.</p>
+          <p>In the back-end an AWS API Getway executes a serverless Lambda function in Node.js that retrieves data from DynamoDB.</p>
+        </div>
+      </div>
+      <div class="portfolio">Career Portfolio</div>
+    </div>
+    <div class="box">
+      <div class="about">
+        Click on a project from the list to update the map:
+      </div>
+      <div class="projects">
+        <ul>
+          <li *ngFor="let project of projects">
+            <span (click)="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
+              <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
+              <div class='company'>{{project.Name}}</div>
+              <div class='position'>{{project.Position}}</div>
+              <div class='address-link'>{{project.Address}}</div>
+              <div class="cb"></div>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="box">
+      <div id="map"></div>
+    </div>
+    <div class="box">
+      <div class="about">
+        Click on a repository from the list to visit github:
+      </div>
+      <ul>
+        <li>
+          <div class='company'>Angular 5 mruanova.com</div>
+          <div class='position'>Career Portfolio in ANGULAR 5</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-mruanova</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>Angular 5 Products</div>
+          <div class='position'>Online Store using ANGULAR 5 routes</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-products</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>Zillow</div>
+          <div class='position'>Python Django Sqlite</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/zillow">https://github.com/mruanova/zillow</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>vue.js mruanova.com</div>
+          <div class='position'>Career Portfolio in VUEJS</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/vue-mruanova">https://github.com/mruanova/vue-mruanova</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>React.js mruanova.com</div>
+          <div class='position'>Career Portfolio in REACTJS</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/react-mruanova">https://github.com/mruanova/react-mruanova</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>angular.js mruanova.com</div>
+          <div class='position'>Career Portfolio in ANGULARJS</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/angularjs-mruanova">https://github.com/mruanova/angularjs-mruanova</a>
+          </div>
+        </li>
+        <li>
+          <div class='company'>jQuery mruanova.com</div>
+          <div class='position'>Career Portfolio in JQUERY</div>
+          <div class='address-link'>
+            <a href="https://github.com/mruanova/jquery-mruanova">https://github.com/mruanova/jquery-mruanova</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <span> © 2018 - All rights reserved. </span>
+</div>
+<!--modal-->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <br/>
+    <p>
+      <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="API">API</a> mruanova.com
+    </p>
+    <p>
+      <a target="_blank" title="back-end" href="https://youtu.be/NOQZ1OdJ-I4">Back-End</a> mruanova.com
+    </p>
+    <p>
+      <a target="_blank" title="Zillow" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> inspired app
+    </p>
+    <p>
+      <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
+      <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a> Angular 5
+    </p>
+    <p>
+      <a target="_blank" title="Invision Ascendon" href="https://invision-beta.prd1.contentdirect.tv">Invision Ascendon</a> CSG
+    </p>
+    <p>
+      <a target="_blank" title="pacman" href="http://mruanova.com/pacman/">PACMAN</a> game
+    </p>
+    <p>
+      <a target="_blank" title="C3JS" href="http://mruanova.com/c3/">C3.js (Timeseries Chart)</a>
+    </p>
+    <p>Mauricio Ruanova-Hurtado</p>
+  </div>
+</div>
