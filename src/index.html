@@ -34,6 +34,25 @@
             text-align: center;
         }
 
+        ul {
+            margin-left: -35px;
+            width: 310px;
+        }
+
+        li {
+            list-style-type: none;
+            margin-top: 5px;
+            padding-top: 5px;
+            border-top: 1px solid silver;
+            width: 300px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #f3f3f3;
+        }
+
         .box {
             background-color: white;
             position: relative;
@@ -288,25 +307,6 @@
             font-size: 11px;
         }
 
-        ul {
-            margin-left: -35px;
-            width: 310px;
-        }
-
-        ul>li {
-            list-style-type: none;
-            margin-top: 5px;
-            padding: 5px;
-            border-top: 1px solid silver;
-            width: 300px;
-            text-align: left;
-            cursor: pointer;
-        }
-
-        ul>li:hover {
-            background-color: #f3f3f3;
-        }
-
         .item>img {
             height: 100px !important;
             width: 100%;
@@ -348,6 +348,52 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 260px;
+            /* Could be more or less, depending on screen size */
+            text-align: left;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #24313f;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -511,9 +557,9 @@
         </div>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Sarpanch:900" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU"></script>
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/animation.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU"></script>
 </body>
 
 </html>

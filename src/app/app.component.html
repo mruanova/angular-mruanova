@@ -1,9 +1,9 @@
 <li *ngFor="let project of projects">
-  <span (click)="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
-      <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
-      <div class='company'>{{project.Name}}</div>
-      <div class='position'>{{project.Position}}</div>
-      <div class='address-link'>{{project.Address}}</div>
-      <div class="cb"></div>
+    <span (click)="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
+        <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
+        <div class='company'>{{project.Name}}</div>
+        <div class='position'>{{project.Position}}</div>
+        <div class='address-link'>{{project.Address}}</div>
+        <div class="cb"></div>
     </span>
 </li>
