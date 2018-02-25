@@ -42,7 +42,6 @@ export class AppComponent implements OnInit {
           this.projects[project].Website,
           this.projects[project].Address);
       }
-
     }).catch((err) => {
       console.log(err);
     });

@@ -1,19 +1,20 @@
-let tops = ["3px", "23px", "43px", "63px", "83px", "103px", "123px"],
-    photos = ["assets/img/mau.jpg","assets/img/selfie.jpg","assets/img/sunglasses.jpg"],
-    selector1 = document.getElementById('selector'),
-    photo1 = document.getElementById('photo'),
-    i = 0,
-    j = 0;
-function updateText() {
-    selector1.style.top = tops[i];
-    photo1.src = photos[j];
-    i++;
-    if (i == tops.length) {
-        i = 0;
-        j++;
-        if (j == photos.length) {
-            j = 0;
-        }
+let modal = document.getElementById('myModal');
+let btn = document.getElementById("about");
+let span = document.getElementsByClassName("close")[0];
+
+// show modal ABOUT
+btn.onclick = function () {
+    modal.style.display = "block";
+};
+
+// hide modal ABOUT on click X
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+// hide modal ABOUT on click anywhere outside the modal
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-}
-setInterval(updateText, 300);
+};
