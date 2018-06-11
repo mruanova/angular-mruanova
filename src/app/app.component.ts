@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       });
 
       this.geocoder = new google.maps.Geocoder();
-      const latlng = new google.maps.LatLng(41.8969173, -87.6457361);
+      const latlng = new google.maps.LatLng(41.9351088, -87.6419177);//home
       const mapOptions = {
         zoom: 14,
         center: latlng
