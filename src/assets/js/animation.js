@@ -1,5 +1,10 @@
 let tops = ["3px", "23px", "43px", "63px", "83px", "103px", "123px"],
-    photos = ["assets/img/mau.jpg","assets/img/selfie.jpg","assets/img/sunglasses.jpg"],
+    photos = ["assets/img/mau.jpg",
+    "assets/img/selfie.jpg",
+    "assets/img/sunglasses.jpg",
+    "assets/img/csg.jpg",
+    "assets/img/sheridan.jpg",
+    "assets/img/gym.jpg"],
     selector1 = document.getElementById('selector'),
     photo1 = document.getElementById('photo'),
     i = 0,
@@ -16,4 +21,4 @@ function updateText() {
         }
     }
 }
-setInterval(updateText, 300);
+setInterval(updateText, 1000);
