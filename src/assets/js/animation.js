@@ -1,5 +1,7 @@
 let tops = ["3px", "23px", "43px", "63px", "83px", "103px", "123px"],
-    photos = ["assets/img/mau.jpg",
+    photos = [
+    "assets/img/mau.jpg",
+    "assets/img/spi.jpg",
     "assets/img/selfie.jpg",
     "assets/img/sunglasses.jpg",
     "assets/img/csg.jpg",
