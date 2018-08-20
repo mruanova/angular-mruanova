@@ -1,0 +1,14 @@
+.component {
+    background-color: white !important;
+    width: 100%;
+}
+input {
+    width: 200px;
+}
+table {
+    width: 100%;
+}
+.columnRight {
+    background-color: silver;
+    text-align: left;
+}

@@ -1,0 +1,27 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.slogan{
+  color: black;
+  font-weight: bold;
+}
+#toolbar a{
+  color: silver;
+  text-decoration: none;
+}
+#toolbar li{
+  font-weight: bold;
+  padding: 20px 0;
+  margin: 0;
+  background-color: black;
+  opacity: 0.8;
+  list-style-type: none;
+  display:inline-block;
+  border: 1px solid silver;
+  text-align: center;
+}
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

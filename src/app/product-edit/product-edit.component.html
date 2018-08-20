@@ -1,0 +1,39 @@
+<div class="component">
+  <h3>Edit Product</h3>
+  <form (submit)="update()" #formData="ngForm">
+    <table>
+      <tbody>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Title:</label>
+          </td>
+          <td class="columnRight">
+            <input type="text" name="title" required [(ngModel)]="product.title">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Price:</label>
+          </td>
+          <td class="columnRight">
+            <input type="number" name="price" required [(ngModel)]="product.price">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Image Url:</label>
+          </td>
+          <td class="columnRight">
+            <input type="text" name="imgUrl" [(ngModel)]="product.imgUrl">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft"></td>
+          <td class="columnRight">
+            <input type="submit" [disabled]="!formData.valid" value="UPDATE" class="btn btn-primary">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

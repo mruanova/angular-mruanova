@@ -1,0 +1,39 @@
+<div class="component">
+  <h3>Create a New Product</h3>
+  <form (submit)="create()" #formData="ngForm">
+    <table>
+      <tbody>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Title:</label>
+          </td>
+          <td class="columnRight">
+            <input type="text" name="title" required [(ngModel)]="newProduct.title">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Price:</label>
+          </td>
+          <td class="columnRight">
+            <input type="number" name="price" required [(ngModel)]="newProduct.price">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft">
+            <label for="">Image Url:</label>
+          </td>
+          <td class="columnRight">
+            <input type="text" name="imgUrl" [(ngModel)]="newProduct.imgUrl">
+          </td>
+        </tr>
+        <tr>
+          <td class="columnLeft"></td>
+          <td class="columnRight">
+            <input type="submit" [disabled]="!formData.valid" class="btn btn-primary">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

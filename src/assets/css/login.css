@@ -1,0 +1,61 @@
+  .navbar .login-container {
+    float: right;
+  }
+  
+  .navbar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:120px;
+  }
+  .navbar input[type=password] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:120px;
+  }
+  
+  .navbar .login-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background-color: #555;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar .login-container button:hover {
+    background-color: red;
+  }
+  
+  @media screen and (max-width: 666px) {
+    .navbar .login-container {
+      float: none;
+    }
+    .navbar a, .navbar input[type=text], .navbar .login-container button {
+      float: none;
+      text-align: left;
+      margin: 0;
+      padding: 14px;
+    }
+    .navbar input[type=text] {
+      border: 1px solid #ccc;  
+    }
+    .navbar a, .navbar input[type=password], .navbar .login-container button {
+      float: none;
+      text-align: left;
+      margin: 0;
+      padding: 14px;
+    }
+    .navbar input[type=password] {
+      border: 1px solid #ccc;  
+    }
+    .login-container {
+        display: none;
+    }
+  }

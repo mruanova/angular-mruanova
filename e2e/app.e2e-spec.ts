@@ -1,10 +1,10 @@
-import { AngularMruanovaPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('angular-mruanova App', () => {
-  let page: AngularMruanovaPage;
+describe('mruanova App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new AngularMruanovaPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
