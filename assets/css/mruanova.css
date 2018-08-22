@@ -1,0 +1,378 @@
+    @font-face {
+        font-family: 'Varela';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+      }
+  
+      * {
+        font-family: 'Varela';
+      }
+  
+      body {
+        background-color: #4d4d4d !important;
+        font-family: 'Franklin Gothic';
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-left: 0;
+        text-align: center;
+      }
+  
+      ul {
+        margin-left: -35px;
+        width: 310px;
+      }
+  
+      li {
+        list-style-type: none;
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid silver;
+        width: 300px;
+        text-align: left;
+        cursor: pointer;
+      }
+  
+      li:hover {
+        background-color: #f3f3f3;
+      }
+  
+      .box {
+        background-color: white;
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+        height: 533px;
+        width: 320px;
+        padding: 0;
+      }
+  
+      .box-foot {
+        display: inline-block;
+        width: 320px;
+      }
+  
+      .top {
+        background-color: #f3f3f3 !important;
+      }
+  
+      .toolbar {
+        background-color: white;
+        box-shadow: 0 3px 5px 1px rgba(0, 0, 0, .3);
+        display: inline-block;
+        margin-bottom: 7px;
+        text-align: center;
+      }
+  
+      .career {
+        color: #4d4d4d;
+        color: white !important;
+        font-size: 24px;
+        font-weight: bold;
+      }
+  
+      .navbutton {
+        width: 75px;
+        display: inline-block;
+        padding-top: 5px;
+      }
+  
+      .navbutton:hover {
+        background-color: #f3f3f3;
+      }
+  
+      .button {
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+      }
+  
+      .banner {
+        color: white;
+        text-transform: uppercase;
+      }
+  
+      .main {
+        width: 100%;
+        margin: 5px 0 5px 0;
+      }
+  
+      .link {
+        color: #24313f;
+        text-decoration: none;
+        font-size: 12px;
+      }
+  
+      .link1 {
+        color: darkcyan;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+      }
+  
+      .link2 {
+        color: darkgoldenrod;
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: bold;
+      }
+  
+      .link3 {
+        color: darkred;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+      }
+  
+      .mau {
+        position: absolute;
+        top: -30px;
+        left: 0px;
+        color: white;
+        font-weight: bold;
+        font-size: 64px;
+        text-shadow: 1px 1px #000000;
+        font-family: 'Sarpanch', sans-serif;
+        padding: 0 5px 0 5px;
+      }
+  
+      .mauricioruanovahurtado {
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        color: white;
+        font-size: 9px;
+        text-shadow: 1px 1px #000000;
+      }
+  
+      #selector {
+        border: 2px solid white;
+        position: absolute;
+        top: 3px;
+        transition: top 0.5s linear;
+        left: 229px;
+        height: 20px;
+        width: 90px;
+        z-index: 1;
+      }
+  
+      .skill {
+        font-weight: bold;
+        font-size: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        height: 16px;
+        width: 90px;
+        left: 229px;
+        text-shadow: 1px 1px #000000;
+        text-align: left;
+        position: absolute;
+        color: white;
+        padding: 0 5px 0 5px;
+      }
+  
+      .skill1 {
+        background-color: purple;
+        top: 5px;
+      }
+  
+      .skill2 {
+        background-color: navy;
+        top: 25px;
+      }
+  
+      .skill3 {
+        background-color: darkcyan;
+        top: 45px;
+      }
+  
+      .skill4 {
+        background-color: green;
+        top: 65px;
+      }
+  
+      .skill5 {
+        background-color: darkgoldenrod;
+        top: 85px;
+      }
+  
+      .skill6 {
+        background-color: orangered;
+        top: 105px;
+      }
+  
+      .skill7 {
+        background-color: maroon;
+        top: 125px;
+      }
+  
+      .skill8 {
+        background-color: #24313f;
+        top: 145px;
+      }
+  
+      .icon {
+        position: absolute;
+        top: 235px;
+        left: 250px;
+        height: 60px;
+        width: 60px;
+      }
+  
+      .portfolio {
+        position: absolute;
+        top: 490px;
+        left: 0px;
+        color: white;
+        background-color: #24313f;
+        opacity: 0.6;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 5px 5px 5px 5px;
+      }
+  
+      #map {
+        height: 533px;
+        width: 320px;
+      }
+  
+      .projects {
+        height: 533px;
+        width: 320px;
+      }
+  
+      .overflow {
+        overflow-y: scroll;
+      }
+  
+      .about {
+        font-size: 11px;
+        width: 320px;
+        text-align: left;
+        padding: 5px 0 0 5px;
+      }
+  
+      .logo {
+        float: left;
+        margin-right: 5px;
+        height: 50px;
+        width: 50px;
+      }
+  
+      .company {
+        color: darkgoldenrod;
+        font-weight: bold;
+        font-size: 11px;
+      }
+  
+      .position {
+        color: #24313f;
+        font-size: 11px;
+      }
+  
+      .address {
+        color: dimgray;
+        font-size: 11px;
+      }
+  
+      .address-link {
+        color: blue;
+        font-size: 11px;
+        text-decoration: underline;
+      }
+  
+      .website {
+        color: darkcyan;
+        font-size: 11px;
+      }
+  
+      .item>img {
+        height: 100px !important;
+        width: 100%;
+      }
+  
+      .footer {
+        color: #888;
+        font-size: 11px;
+      }
+  
+      .cb {
+        clear: both;
+      }
+  
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+  
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+  
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+  
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+      }
+  
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 260px;
+        /* Could be more or less, depending on screen size */
+        text-align: left;
+      }
+  
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+  
+      .close:hover,
+      .close:focus {
+        color: #24313f;
+        text-decoration: none;
+        cursor: pointer;
+      }
