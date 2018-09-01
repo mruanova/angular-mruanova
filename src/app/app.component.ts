@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from './product.service';
 import { Product } from './product';
-//import { BehaviorSubject } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title: string = 'app';
   products = [
     new Product(1, 'Angular', 0.99, '../../assets/img/angular.png'),
@@ -32,21 +31,5 @@ export class AppComponent implements OnInit {
     this._productService.productsObservable.subscribe((products) => {
       this.products = products;
     });
-  };
-
-  ngOnInit() {
-    document.getElementById("mySidebar").style.display = "none";
-  };
-
-  w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-  };
-
-  w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-  };
-
-  loginUser() {
-    window.alert('Coming soon');
   };
 };
