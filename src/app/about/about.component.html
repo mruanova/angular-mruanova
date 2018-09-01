@@ -1,98 +1,75 @@
 <div class="component">
-    <div class="container">
-        <div class="mySlides">
-            <div class="numbertext">1 / 6</div>
-            <img src="/assets/img/img_woods_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">2 / 6</div>
-            <img src="/assets/img/img_5terre_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">3 / 6</div>
-            <img src="/assets/img/img_mountains_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">4 / 6</div>
-            <img src="/assets/img/img_lights_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">5 / 6</div>
-            <img src="/assets/img/img_nature_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">6 / 6</div>
-            <img src="/assets/img/img_snow_wide.jpg" style="width:100%">
-        </div>
-
-        <a class="prev" (click)="plusSlides(-1)">❮</a>
-        <a class="next" (click)="plusSlides(1)">❯</a>
-
-        <div class="caption-container">
-            <p id="caption"></p>
-        </div>
-
-        <div class="row">
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    <mat-tab-group>
+        <mat-tab label="Career Portfolio">
+            <h2>
+                CAREER PORTFOLIO
+            </h2>
+            <h3>
+                Mauricio Ruanova-Hurtado
+            </h3>
+            <p>
+                <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="API">API</a>
+                |
+                <a target="_blank" title="back-end" href="https://youtu.be/NOQZ1OdJ-I4">Back-End</a> mruanova.com
+            </p>
+            <p>
+                <a target="_blank" title="C3JS" href="http://mruanova.com/c3/">C3</a> JavaScript Frameworks
+            </p>
+            <p>
+                <a target="_blank" title="deployment" href="https://www.youtube.com/watch?v=QjrfUO91wfc">AWS EC2</a> |
+                <a target="_blank" title="Zillow" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> Python Django
+            </p>
+            <p>
+                <a target="_blank" title="channel" href="https://www.youtube.com/channel/UC_HW27YMfrpQeX1v5AijWSQ">YouTube</a>
+                Channel with demos
+            </p>
+            <p>
+                <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
+                <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a> Angular 5
+            </p>
+            <p>
+                Games:
+                <a target="_blank" title="pacman" href="http://mruanova.com/pacman/">PACMAN</a> |
+                <a target="_blank" title="C3JS" href="http://mruanova.com/d3/">JezzBall</a>
+            </p>
+            <p>
+                Publications:
+                <a target="_blank" href="https://link.springer.com/chapter/10.1007/11499053_28" title="books">Papers</a>
+                |
+                <a target="_blank" href="https://books.google.com/books?id=Thb6BwAAQBAJ&pg=PA206&lpg=PA206&dq=MAURICIO+RUANOVA-HURTADO&source=bl&ots=muRK4E3Oz-&sig=DGPkIF99nLw8lm8fHykqBsQU78E&hl=en&sa=X&ved=0ahUKEwjd96vDjNTbAhVm7oMKHfbxCUIQ6AEIYTAN"
+                    title="books">Books</a>
+            </p>
+        </mat-tab>
+        <mat-tab label="Social Media">
+            <div class="icon-bar" style="right: 0;">
+                <a href="https://github.com/mruanova/" class="github" target="_blank">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mruanova/" class="linkedin" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/5490782/mruanova" class="blogger" target="_blank">
+                    <i class="fa fa-rss"></i>
+                </a>
+                <a href="https://www.facebook.com" class="facebook" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=QjrfUO91wfc" class="youtube" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="https://twitter.com" class="twitter" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://mruanova.blogspot.com" class="google" target="_blank">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="https://medium.com/@moreissues/" class="medium" target="_blank">
+                    <i class="fa fa-medium"></i>
+                </a>
             </div>
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="/assets/img/img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-            </div>
-        </div>
-    </div>
-    <h2>
-        CAREER PORTFOLIO
-    </h2>
-    <h3>
-        Mauricio Ruanova-Hurtado
-    </h3>
-    <p>
-        <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="API">API</a> |
-        <a target="_blank" title="back-end" href="https://youtu.be/NOQZ1OdJ-I4">Back-End</a> mruanova.com
-    </p>
-    <p>
-        <a target="_blank" title="C3JS" href="http://mruanova.com/c3/">C3</a> JavaScript Frameworks
-    </p>
-    <p>
-        <a target="_blank" title="deployment" href="https://www.youtube.com/watch?v=QjrfUO91wfc">AWS EC2</a> |
-        <a target="_blank" title="Zillow" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> Python Django
-    </p>
-    <p>
-        <a target="_blank" title="channel" href="https://www.youtube.com/channel/UC_HW27YMfrpQeX1v5AijWSQ">YouTube</a> Channel with demos
-    </p>
-    <p>
-        <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
-        <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a> Angular 5
-    </p>
-    <p>
-        Games:
-        <a target="_blank" title="pacman" href="http://mruanova.com/pacman/">PACMAN</a> |
-        <a target="_blank" title="C3JS" href="http://mruanova.com/d3/">JezzBall</a>
-    </p>
-    <p>
-        Publications:
-        <a target="_blank" href="https://link.springer.com/chapter/10.1007/11499053_28" title="books">Papers</a> |
-        <a target="_blank" href="https://books.google.com/books?id=Thb6BwAAQBAJ&pg=PA206&lpg=PA206&dq=MAURICIO+RUANOVA-HURTADO&source=bl&ots=muRK4E3Oz-&sig=DGPkIF99nLw8lm8fHykqBsQU78E&hl=en&sa=X&ved=0ahUKEwjd96vDjNTbAhVm7oMKHfbxCUIQ6AEIYTAN"
-            title="books">Books</a>
-    </p>
+        </mat-tab>
+    </mat-tab-group>
+
     <!--
     <button type="submit" class="btn btn-default">
     <i class="fa fa-shopping-cart"></i> Buy Now

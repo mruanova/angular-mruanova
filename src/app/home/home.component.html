@@ -1,119 +1,178 @@
-<div class="career">JAVASCRIPT ENGINEER</div>
-<div class="main">
-    <div class="box">
-        <img id="photo" [src]="imageSource" alt="mau">
-        <div class="mau">mau</div>
-        <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
-        <div class="skill skill1">ASP.Net C#</div>
-        <div class="skill skill2">jQuery</div>
-        <div class="skill skill3">React.js</div>
-        <div class="skill skill4">Node.js</div>
-        <div class="skill skill5">Python</div>
-        <div class="skill skill6">Vue.js</div>
-        <div class="skill skill7">Angular</div>
-        <div id="selector"></div>
-        <div class="portfolio">JavaScript Engineer</div>
-    </div>
-    <div class="box">
-        <div class="about">
-            Click on a project from the list to update the map:
-        </div>
-        <div class="projects">
-            <ul>
-                <project-list></project-list>
-            </ul>
-        </div>
-    </div>
-    <div class="box">
-        <div id="map"></div>
-    </div>
-    <div class="box">
-        <div class="about">
-            This website uses Angular in the front-end to request all the projects from a RESTful web service API with an Http Get method
-            and render the JSON response in a list and a map. <br>In the back-end an AWS API Getway executes a serverless Lambda
-            function in Node.js that reads data from DynamoDB.
-        </div>
-        <ul>
-            <!--
-            <li>
-            <div class='company'>JavaScript Frameworks 2018</div>
-            <div class='position'>Compare the most popular JavaScript frameworks</div>
-            <div class='address-link'>
-            <a href="http://mruanova.com/c3">http://mruanova.com/c3</a>
+<div class="component">
+    <mat-tab-group>
+        <mat-tab label="Career Portfolio">
+            <div class="main">
+                <div class="box">
+                    <img id="photo" [src]="imageSource" alt="mau">
+                    <div class="mau">mau</div>
+                    <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
+                    <div class="skill skill1">ASP.Net C#</div>
+                    <div class="skill skill2">jQuery</div>
+                    <div class="skill skill3">React.js</div>
+                    <div class="skill skill4">Node.js</div>
+                    <div class="skill skill5">Python</div>
+                    <div class="skill skill6">Vue.js</div>
+                    <div class="skill skill7">Angular</div>
+                    <div id="selector"></div>
+                    <div class="portfolio">JavaScript Engineer</div>
+                </div>
+                <div class="box">
+                    <div class="about">
+                        Click on a project from the list to update the map:
+                    </div>
+                    <div class="projects">
+                        <ul>
+                            <project-list></project-list>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="map"></div>
+                </div>
+                <div class="box">
+                    <div class="about">
+                        This website uses Angular in the front-end to request all the projects from a RESTful web service API with an Http Get method
+                        and render the JSON response in a list and a map. <br>In the back-end an
+                        AWS API Getway executes a serverless Lambda function in Node.js that reads data from DynamoDB.
+                    </div>
+                    <ul>
+                        <!--
+                        <li>
+                        <div class='company'>JavaScript Frameworks 2018</div>
+                        <div class='position'>Compare the most popular JavaScript frameworks</div>
+                        <div class='address-link'>
+                        <a href="http://mruanova.com/c3">http://mruanova.com/c3</a>
+                        </div>
+                        </li>
+                        -->
+                        <li>
+                            <div class='company'>Angular mruanova.com</div>
+                            <div class='position'>Career Portfolio in ANGULAR</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>vue.js mruanova.com</div>
+                            <div class='position'>Career Portfolio in VUEJS</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/vue-mruanova">https://github.com/mruanova/vue-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>React.js mruanova.com</div>
+                            <div class='position'>Career Portfolio in REACTJS</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/react-mruanova">https://github.com/mruanova/react-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>angular.js mruanova.com</div>
+                            <div class='position'>Career Portfolio in angular.js 1.6.7</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/angularjs-mruanova">https://github.com/mruanova/angularjs-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>backbone-underscore mruanova.com</div>
+                            <div class='position'>Career Portfolio in backbone-underscore</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/backbone-mruanova">https://github.com/mruanova/backbone-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>jQuery mruanova.com</div>
+                            <div class='position'>Career Portfolio in JQUERY</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/jquery-mruanova">https://github.com/mruanova/jquery-mruanova</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='company'>PACMAN JavaScript</div>
+                            <div class='position'>Play PACMAN online!</div>
+                            <div class='address-link'>
+                                <a href="https://github.com/mruanova/pacman">https://github.com/mruanova/pacman</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            </li>
-            -->
-            <li>
-                <div class='company'>Angular mruanova.com</div>
-                <div class='position'>Career Portfolio in ANGULAR</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/angular-mruanova">https://github.com/mruanova/angular-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>vue.js mruanova.com</div>
-                <div class='position'>Career Portfolio in VUEJS</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/vue-mruanova">https://github.com/mruanova/vue-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>React.js mruanova.com</div>
-                <div class='position'>Career Portfolio in REACTJS</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/react-mruanova">https://github.com/mruanova/react-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>angular.js mruanova.com</div>
-                <div class='position'>Career Portfolio in angular.js 1.6.7</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/angularjs-mruanova">https://github.com/mruanova/angularjs-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>backbone-underscore mruanova.com</div>
-                <div class='position'>Career Portfolio in backbone-underscore</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/backbone-mruanova">https://github.com/mruanova/backbone-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>jQuery mruanova.com</div>
-                <div class='position'>Career Portfolio in JQUERY</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/jquery-mruanova">https://github.com/mruanova/jquery-mruanova</a>
-                </div>
-            </li>
-            <li>
-                <div class='company'>PACMAN JavaScript</div>
-                <div class='position'>Play PACMAN online!</div>
-                <div class='address-link'>
-                    <a href="https://github.com/mruanova/pacman">https://github.com/mruanova/pacman</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+        </mat-tab>
+        <mat-tab label="About">
+            <h2>
+                CAREER PORTFOLIO
+            </h2>
+            <h3>
+                Mauricio Ruanova-Hurtado
+            </h3>
+            <p>
+                <a href="https://www.linkedin.com/in/mruanova/" target="_blank">Linkedin</a>
+            </p>
+            <p>
+                <a href="https://github.com/mruanova/" target="_blank">Github</a>
+            </p>
+            <p>
+                <a href="https://stackoverflow.com/users/5490782/mruanova" target="_blank">Stack Overflow</a>
+            </p>
+            <p>
+                <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="API">API</a>
+                |
+                <a target="_blank" title="back-end" href="https://youtu.be/NOQZ1OdJ-I4">Back-End</a> mruanova.com
+            </p>
+            <p>
+                <a target="_blank" title="C3JS" href="http://mruanova.com/c3/">C3</a> JavaScript Frameworks
+            </p>
+            <p>
+                <a target="_blank" title="deployment" href="https://www.youtube.com/watch?v=QjrfUO91wfc">AWS EC2</a> |
+                <a target="_blank" title="Zillow" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> Python Django
+            </p>
+            <p>
+                <a target="_blank" title="channel" href="https://www.youtube.com/channel/UC_HW27YMfrpQeX1v5AijWSQ">YouTube</a>
+                Channel with demos
+            </p>
+            <p>
+                <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
+                <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a> Angular 5
+            </p>
+            <p>
+                Games:
+                <a target="_blank" title="pacman" href="http://mruanova.com/pacman/">PACMAN</a> |
+                <a target="_blank" title="C3JS" href="http://mruanova.com/d3/">JezzBall</a>
+            </p>
+            <p>
+                Publications:
+                <a target="_blank" href="https://link.springer.com/chapter/10.1007/11499053_28" title="books">Papers</a>
+                |
+                <a target="_blank" href="https://books.google.com/books?id=Thb6BwAAQBAJ&pg=PA206&lpg=PA206&dq=MAURICIO+RUANOVA-HURTADO&source=bl&ots=muRK4E3Oz-&sig=DGPkIF99nLw8lm8fHykqBsQU78E&hl=en&sa=X&ved=0ahUKEwjd96vDjNTbAhVm7oMKHfbxCUIQ6AEIYTAN"
+                    title="books">Books</a>
+            </p>
+            <!--icon-bar-->
+            <div class="icon-bar" style="left: 0;">
+                <a href="https://github.com/mruanova/" class="github" target="_blank">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mruanova/" class="linkedin" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/5490782/mruanova" class="blogger" target="_blank">
+                    <i class="fa fa-rss"></i>
+                </a>
+                <a href="https://www.facebook.com" class="facebook" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=QjrfUO91wfc" class="youtube" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="https://twitter.com" class="twitter" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://mruanova.blogspot.com" class="google" target="_blank">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="https://medium.com/@moreissues/" class="medium" target="_blank">
+                    <i class="fa fa-medium"></i>
+                </a>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
-<!--
-<div id="toolbar">
-    <p class="slogan">Mauricio Ruanova-Hurtado</p>
-    <ul>
-        <li class="active">
-            <a [routerLink]="['/products']">store</a>
-        </li>
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/mruanova/">linkedin</a>
-        </li>
-        <li>
-            <a target="_blank" href="https://github.com/mruanova/">github</a>
-        </li>
-        <li>
-            <a target="_blank" href="https://medium.com/@moreissues/">blog</a>
-        </li>
-        <li>
-            <a target="_blank" href="https://stackoverflow.com/users/5490782/mruanova/">answer</a>
-        </li>
-    </ul>
-</div>
--->

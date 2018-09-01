@@ -2,10 +2,6 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
-.slogan{
-  color: black;
-  font-weight: bold;
-}
 #toolbar a{
   color: silver;
   text-decoration: none;
