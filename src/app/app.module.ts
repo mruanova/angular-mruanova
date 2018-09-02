@@ -14,9 +14,6 @@ import { ProductNewComponent } from './product-new/product-new.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProjectListComponent } from './project-list/project-list.component';
-import { AboutComponent } from './about/about.component';
-import { DemoComponent } from './demo/demo.component';
-import { GamesComponent } from './games/games.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -63,9 +60,6 @@ import {
     ProductListComponent,
     ProductEditComponent,
     ProjectListComponent,
-    AboutComponent,
-    DemoComponent,
-    GamesComponent,
   ],
   imports: [
     BrowserModule,

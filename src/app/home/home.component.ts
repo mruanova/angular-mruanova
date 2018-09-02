@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
     'assets/img/sunglasses.jpg',
     'assets/img/csg.jpg',
     'assets/img/sheridan.jpg',
-    'assets/img/gym.jpg'];
+    'assets/img/gym.jpg',
+    'assets/img/udem.jpg',
+  ];
   imageSource: string = this.images[0];
   tops: string[] = ['3px', '23px', '43px', '63px', '83px', '103px', '123px'];
   i: number = 0;

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('mruanova App', () => {
+describe('angular-mruanova App', () => {
   let page: AppPage;
 
   beforeEach(() => {
