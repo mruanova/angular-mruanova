@@ -2,5 +2,26 @@
   <button mat-button [routerLink]="['/']"><img alt="icon" src="assets/img/angular-white-transparent.svg">Home</button>
   <button mat-button [routerLink]="['/products']">Store</button>
   <button mat-button [routerLink]="['/products/new']">New</button>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <!--right-->
+  <a target="_blank" class="docs-button docs-navbar-hide-small mat-button cdk-focused cdk-mouse-focused" href="https://github.com/mruanova"
+    mat-button>
+    <span class="mat-button-wrapper">
+      <img _ngcontent-c1="" alt="angular" class="docs-angular-logo" src="assets/img/github-circle-white-transparent.svg">      GitHub
+    </span>
+    <div class="mat-button-ripple mat-ripple" matripple=""></div>
+    <div class="mat-button-focus-overlay"></div>
+  </a>
 </mat-toolbar>
+<!--
+  <button class="sidenav-toggle mat-button" mat-button="">
+    <span class="mat-button-wrapper">
+      <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">menu</mat-icon>
+    </span>
+    <div class="mat-button-ripple mat-ripple" matripple=""></div>
+    <div class="mat-button-focus-overlay"></div>
+  </button>
+-->
+<div class="docs-primary-header component-page-header" style="height:10px"></div>
 <router-outlet></router-outlet>

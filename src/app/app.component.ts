@@ -16,7 +16,7 @@ export class AppComponent {
     new Product(4, 'JavaScript', 0.99, '../../assets/img/js.png'),
     new Product(5, 'AWS', 0.99, '../../assets/img/aws.png'),
     new Product(6, 'S3', 0.99, '../../assets/img/s3.png'),
-    new Product(7, 'API Gateway', 0.99, '../../assets/img/api_gateway.png'),
+    new Product(7, 'API', 0.99, '../../assets/img/api_gateway.png'),
     new Product(8, 'Route 53', 0.99, '../../assets/img/route53.png'),
     new Product(9, 'Lambda', 0.99, '../../assets/img/lambda.png'),
     new Product(10, 'IAM', 0.99, '../../assets/img/iam.png'),

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   images: string[] = [
+    'assets/img/mty.jpg',
+  ];
+  /*
     'assets/img/mau.jpg',
     'assets/img/spi.jpg',
     'assets/img/selfie.jpg',
@@ -15,7 +18,7 @@ export class HomeComponent implements OnInit {
     'assets/img/sheridan.jpg',
     'assets/img/gym.jpg',
     'assets/img/udem.jpg',
-  ];
+  */
   imageSource: string = this.images[0];
   tops: string[] = ['3px', '23px', '43px', '63px', '83px', '103px', '123px'];
   i: number = 0;

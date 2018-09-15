@@ -21,3 +21,129 @@ img:hover {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+.docs-component-viewer-nav-content {
+  margin: 25px;
+  width: 240px;
+  max-height: 75vh;
+  overflow: auto;
+}
+/* material */
+app-component-sidenav{
+  display:flex;
+  flex-direction:column
+}
+.docs-component-viewer-sidenav-container{
+  flex:1;
+  box-sizing:border-box
+}
+.docs-component-viewer-sidenav{
+  overflow:auto
+}
+.docs-component-sidenav-inner-content{
+  display:flex;
+  flex-direction:row
+}
+.docs-component-sidenav-inner-content router-outlet+*{
+  flex-grow:1
+}
+.mat-drawer::-webkit-scrollbar{
+  height:4px;
+  width:4px
+}
+.docs-component-viewer-nav{
+  position:-webkit-sticky;
+  position:sticky;
+  top:25px
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content{
+  margin:25px;
+  width:320px;
+  max-height:75vh;
+  overflow:auto
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content::-webkit-scrollbar{
+  height:4px;
+  width:4px
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content button{
+  padding:10px 15px;
+  font-weight:700;
+  line-height:16px;
+  margin:0;
+  font-size:13px;
+  cursor:pointer;
+  position:relative;
+  display:block;
+  width:100%;
+  text-align:left;
+  background:0 0;
+  border:none
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content button:focus{
+  outline:0
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content button .mat-icon{
+  position:absolute;
+  right:5px;
+  font-size:18px
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content hr{
+  padding:0;
+  margin:0
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content ul{
+  list-style-type:none;
+  margin:0 0 5px;
+  padding:0;
+  overflow:hidden
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content li{
+  font-size:13px;
+  line-height:16px;
+  margin:0;
+  padding:5px 15px 5px 20px
+}
+.docs-component-viewer-nav .docs-component-viewer-nav-content a{
+  display:block;
+  text-decoration:none
+}
+.docs-component-sidenav-content{
+  display:flex;
+  flex-direction:column;
+  min-height:100%
+}
+.docs-component-sidenav-inner-content{
+  display:flex;
+  flex-direction:column;
+  flex:1
+}
+.docs-component-sidenav-body-content{
+  display:flex;
+  flex:1 1 auto
+}
+@media (max-width:720px){
+  .docs-component-viewer-sidenav-container .docs-component-viewer-sidenav{
+      z-index:4
+  }
+  .docs-component-viewer-nav{
+      position:relative;
+      top:0
+  }
+  .docs-component-viewer-nav .docs-component-viewer-nav-content{
+      box-sizing:border-box;
+      margin:0;
+      max-height:initial;
+      box-sizing:border-box
+  }
+  .docs-component-viewer-sidenav-container{
+      flex:1 0 auto
+  }
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1024px) {
+  mat-sidenav {
+    display: none;
+    visibility: hidden;
+  }
+}

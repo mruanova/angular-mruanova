@@ -1,13 +1,11 @@
 <div class="component">
   <div class='product' *ngFor="let product of products">
-
     <div class='container'>
       <img *ngIf="product.imgUrl" [src]="product.imgUrl" alt='product' class='image'>
       <div class='overlay'>
         <div class='text'>Sold Out</div>
       </div>
     </div>
-
     <h3 class='imgRep' *ngIf="!product.imgUrl">No Image Available.</h3>
     <div class="details">
       <h3>{{product.title}}</h3>

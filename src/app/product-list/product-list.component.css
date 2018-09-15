@@ -14,7 +14,7 @@ div.product h3.imgRep {
     padding-bottom: 83px;
 }
 div.product img {
-    width: 220px;
+    width: 100px;
     margin: 5px;
 }
 .btn {
@@ -55,3 +55,10 @@ div.product img {
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1024px) {
+    div.product {
+        width: 150px;
+    }
+}
