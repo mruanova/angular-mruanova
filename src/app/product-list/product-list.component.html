@@ -1,17 +1,22 @@
 <div class="component">
   <div class='product' *ngFor="let product of products">
-    <div class='container'>
-      <img *ngIf="product.imgUrl" [src]="product.imgUrl" alt='product' class='image'>
-      <div class='overlay'>
-        <div class='text'>Sold Out</div>
+    <mat-card>
+      <mat-card-title>{{product.title}}</mat-card-title>
+      <mat-card-subtitle>{{product.price | currency }}</mat-card-subtitle>
+      <mat-card-content>Web Development</mat-card-content>
+      <div class='container'>
+        <img mat-card-image *ngIf="product.imgUrl" [src]="product.imgUrl" alt='product' class='image'>
+        <div class='overlay'>
+          <div class='text'>Sold Out</div>
+        </div>
       </div>
-    </div>
-    <h3 class='imgRep' *ngIf="!product.imgUrl">No Image Available.</h3>
-    <div class="details">
-      <h3>{{product.title}}</h3>
-      <h3>{{product.price | currency }}</h3>
-    </div>
-    <button class="btn btn-primary" [routerLink]="['/products', 'edit', product.id]">EDIT</button>
-    <button class="btn btn-secondary" (click)="deleteProduct(product)">DELETE</button>
+      <h3 class='imgRep' *ngIf="!product.imgUrl">No Image Available.</h3>
+      <mat-card-footer>
+        <mat-card-actions>
+          <button class="btn btn-primary" [routerLink]="['/products', 'edit', product.id]">EDIT</button>
+          <button class="btn btn-secondary" (click)="deleteProduct(product)">DELETE</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
   </div>
 </div>
