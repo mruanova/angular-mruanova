@@ -43,7 +43,7 @@
         position: relative;
         vertical-align: top;
         display: inline-block;
-        height: 533px;
+        height: 565px;
         width: 320px;
         padding: 0;
       }
@@ -147,7 +147,7 @@
       }
   
       #selector {
-        border: 2px solid white;
+        border: 2px solid gold;
         position: absolute;
         top: 3px;
         transition: top 0.5s linear;
