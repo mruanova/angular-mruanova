@@ -3,9 +3,11 @@ import { HomeComponent } from './home/home.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { VisaComponent } from './visa/visa.component';
 
 const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'visa', component: VisaComponent, pathMatch: 'full' },
   { path: 'products', component: ProductListComponent, pathMatch: 'full' },
   { path: 'products/new', component: ProductNewComponent, pathMatch: 'full' },
   { path: 'products/edit/:id', component: ProductEditComponent, pathMatch: 'full' },

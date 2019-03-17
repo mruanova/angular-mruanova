@@ -52,6 +52,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { VisaComponent } from './visa/visa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import {
     ProductListComponent,
     ProductEditComponent,
     ProjectListComponent,
+    VisaComponent,
   ],
   imports: [
     BrowserModule,
