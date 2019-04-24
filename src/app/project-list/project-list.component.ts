@@ -9,7 +9,7 @@ let map;
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  title = 'Mauricio Ruanova-Hurtado';
+  title = 'Mauricio Ruanova';
   projects = null;
   geocoder = null;
   map = null;
