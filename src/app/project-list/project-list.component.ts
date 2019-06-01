@@ -13,7 +13,7 @@ export class ProjectListComponent implements OnInit {
   projects = null;
   geocoder = null;
   map = null;
-  promise;
+  callback$; // observable
 
   constructor(private _apiService: ApiService) {
     // dependency injection
@@ -21,8 +21,8 @@ export class ProjectListComponent implements OnInit {
 
   // get all the projects from the api
   ngOnInit() {
-    this.promise = this._apiService.search();
-    this.promise.then((data) => {
+    this.callback$ = this._apiService.search();
+    this.callback$.subscribe((data) => {
       this.projects = data.Items.sort(function (a, b) {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
@@ -42,8 +42,6 @@ export class ProjectListComponent implements OnInit {
           this.projects[project].Website,
           this.projects[project].Address);
       }
-    }).catch((err) => {
-      console.log(err);
     });
   };
 
