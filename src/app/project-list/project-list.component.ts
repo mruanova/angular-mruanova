@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Observable } from 'rxjs';
 declare const google: any;
 let map;
+
+const url = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects';
 
 @Component({
   selector: 'project-list',
@@ -10,18 +13,16 @@ let map;
 })
 export class ProjectListComponent implements OnInit {
   title = 'Mauricio Ruanova';
-  projects = null;
+  projects = [];
   geocoder = null;
   map = null;
-  callback$; // observable
+  callback$: Observable<any>;
 
-  constructor(private _apiService: ApiService) {
-    // dependency injection
-  };
+  constructor(private _apiService: ApiService) { };
 
   // get all the projects from the api
   ngOnInit() {
-    this.callback$ = this._apiService.search();
+    this.callback$ = this._apiService.get(url);
     this.callback$.subscribe((data) => {
       this.projects = data.Items.sort(function (a, b) {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
