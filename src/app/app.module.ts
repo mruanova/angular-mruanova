@@ -49,7 +49,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { VisaComponent } from './visa/visa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,8 +56,7 @@ import { VisaComponent } from './visa/visa.component';
     ProductNewComponent,
     ProductListComponent,
     ProductEditComponent,
-    ProjectListComponent,
-    VisaComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
