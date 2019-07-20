@@ -7,8 +7,10 @@ export class ApiService {
 
   constructor(private _http: HttpClient) { };
 
-  get(url: string): Observable<any> {
-    return this._http.get(url);
+  getProjects(url: string, env: string, key: string): Observable<any> {
+    const headers = { 'x-api-key': key };
+    const options = { headers: headers }; // withCredentials: true 
+    return this._http.get(url + '/' + env + '/projects', options);
   };
 
 };

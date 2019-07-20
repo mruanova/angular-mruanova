@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 declare const google: any;
 let map;
-
-const url = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects';
 
 @Component({
   selector: 'project-list',
@@ -12,7 +10,10 @@ const url = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/project
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  title = 'Mauricio Ruanova';
+  @Input() url: string;
+  @Input() env: string;
+  @Input() key: string;
+  title = '';
   projects = [];
   geocoder = null;
   map = null;
@@ -22,7 +23,7 @@ export class ProjectListComponent implements OnInit {
 
   // get all the projects from the api
   ngOnInit() {
-    this.callback$ = this._apiService.get(url);
+    this.callback$ = this._apiService.getProjects(this.url, this.env, this.key);
     this.callback$.subscribe((data) => {
       this.projects = data.Items.sort(function (a, b) {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);

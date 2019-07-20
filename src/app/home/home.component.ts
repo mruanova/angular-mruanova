@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  url: string = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com';
+  env: string = 'prod';
+  key: string = '0mzGVPfsx29dDl0mZmKfH46N2jk5EkYW36I0myOZ';
   images: string[] = [
     'assets/img/bitemoji.jpg',
   ];
