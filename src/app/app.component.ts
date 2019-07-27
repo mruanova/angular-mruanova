@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
 import { Product } from './product';
 
@@ -7,7 +7,7 @@ import { Product } from './product';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string = 'app';
   products = [
     new Product(1, 'Angular', 0.99, '../../assets/img/angular.png'),
@@ -36,4 +36,14 @@ export class AppComponent {
       this.products = products;
     });
   };
+
+  ngOnInit() {
+    const key1 = 'AIzaSyBrRJ6sdmTmH4a';
+    const key2 = 'VSGLT8xA8dC3J66CEaA0';
+    const url = 'https://maps.googleapis.com/maps/api/js?key='+key1+key2;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
 };
