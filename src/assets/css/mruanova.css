@@ -129,7 +129,7 @@
         position: absolute;
         top: -30px;
         left: 0px;
-        color: white;
+        color: gold;
         font-weight: bold;
         font-size: 64px;
         text-shadow: 1px 1px #000000;
@@ -141,7 +141,7 @@
         position: absolute;
         top: 40px;
         left: 10px;
-        color: white;
+        color: gold;
         font-size: 14px;
         text-shadow: 1px 1px #000000;
       }

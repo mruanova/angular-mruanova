@@ -1,3 +1,6 @@
+<li *ngIf="projects.length===0">
+    Loading...
+</li>
 <li *ngFor='let project of projects'>
     <span (click)='mapGeoCode(project.Name,project.Website,project.Position,project.Address);'>
         <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
