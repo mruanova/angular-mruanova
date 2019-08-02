@@ -13,7 +13,9 @@
                         This website uses Angular in the front-end to request all the projects from a RESTful web
                         service API with an Http Get method
                         and renders the JSON response in a list and a map. <br>In the back-end an
-                        AWS API Getway executes a serverless Lambda function in Node.js that reads data from DynamoDB.
+                        AWS API Gateway executes a serverless Lambda function in Node.js that reads data from DynamoDB.
+                        The domain is registered in Route 53 and hosted in S3 bucket. 
+                        The HTTP/SSL certificate is distributed using CloudFront.
                     </div>
                     <ul class="ng-trigger ng-trigger-bodyExpansion" id="panel-forms" style="display: block;">
                         <li class="">
@@ -100,7 +102,7 @@
                     </div>
                     <div class="box">
                         <div class="about">
-                            Click on a project from the list to update the map:
+                            INTERACTIVE: Click on a project from the list to update map:
                         </div>
                         <div class="projects">
                             <ul>
