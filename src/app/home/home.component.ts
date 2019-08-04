@@ -10,7 +10,7 @@ export class HomeComponent {
   env: string = 'prod';
   key: string = '';
   images: string[] = [
-    'assets/img/bitemoji.jpg',
+    'assets/img/giphy.gif',
   ];
   /*
     'assets/img/mau.jpg',

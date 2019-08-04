@@ -1,5 +1,5 @@
 <li *ngIf="projects.length===0">
-    Loading...
+    <img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 150px" />
 </li>
 <li *ngFor='let project of projects'>
     <span (click)='mapGeoCode(project.Name,project.Website,project.Position,project.Address);'>

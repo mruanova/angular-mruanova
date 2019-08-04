@@ -2,6 +2,10 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
+#photo {
+  margin-top: 70px;
+  width: 320px;
+}
 #toolbar a{
   color: silver;
   text-decoration: none;
@@ -17,9 +21,13 @@ body{
   border: 1px solid silver;
   text-align: center;
 }
-img:hover {
+img {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+img:hover {
+  -webkit-transform: initial;
+  transform: initial;
 }
 .docs-component-viewer-nav-content {
   margin: 25px;
