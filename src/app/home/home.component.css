@@ -21,11 +21,11 @@ body{
   border: 1px solid silver;
   text-align: center;
 }
-img {
+#photo {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
-img:hover {
+#photo:hover {
   -webkit-transform: initial;
   transform: initial;
 }
