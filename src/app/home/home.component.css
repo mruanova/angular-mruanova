@@ -149,7 +149,7 @@ app-component-sidenav{
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   mat-sidenav {
     display: none;
     visibility: hidden;

@@ -24,12 +24,17 @@
         width: 310px;
       }
   
-      li {
+      ul li {
         list-style-type: none;
         margin-top: 5px;
         padding-top: 5px;
         border-top: 1px solid silver;
         width: 300px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      ol li {
         text-align: left;
         cursor: pointer;
       }
