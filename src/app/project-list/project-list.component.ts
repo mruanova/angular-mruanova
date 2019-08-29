@@ -3,7 +3,7 @@ import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import { EnvService } from '../env.service';
 
-declare const google: any;
+// declare const google: any;
 let map;
 
 @Component({
@@ -28,14 +28,11 @@ export class ProjectListComponent implements OnInit {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
 
-      this.geocoder = new google.maps.Geocoder();
-      const latlng = new google.maps.LatLng(41.9351088, -87.6419177);//home
-      const mapOptions = {
-        zoom: 14,
-        center: latlng
-      };
-      map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
+      // this.geocoder = new google.maps.Geocoder();
+      // const latlng = new google.maps.LatLng(41.9351088, -87.6419177); // default
+      // const mapOptions = {zoom: 14, center: latlng};
+      // map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      /*
       for (let project = 0; project < this.projects.length; project++) {
         this.addMarker(
           this.projects[project].ProjectId,
@@ -43,6 +40,7 @@ export class ProjectListComponent implements OnInit {
           this.projects[project].Website,
           this.projects[project].Address);
       }
+      */
     });
   };
 
@@ -54,6 +52,7 @@ export class ProjectListComponent implements OnInit {
       console.log(website);
       console.log(address);
     }
+    /*
     this.geocoder.geocode({ 'address': address }, function (results, status) {
       if (status === 'OK') {
         const marker = new google.maps.Marker({
@@ -80,8 +79,9 @@ export class ProjectListComponent implements OnInit {
         });
       }
     });
+    */
   };
-
+/*
   mapGeoCode(name, website, position, address) {
     this.geocoder.geocode({ 'address': address }, function (results, status) {
       if (status === 'OK') {
@@ -109,5 +109,5 @@ export class ProjectListComponent implements OnInit {
       }
     });
   };
-
+*/
 };
