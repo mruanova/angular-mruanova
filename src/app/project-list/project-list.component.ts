@@ -27,6 +27,9 @@ export class ProjectListComponent implements OnInit {
       this.projects = data.Items.sort(function (a, b) {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
+      if (this.envService.debug) {
+        console.log('projects', this.projects);
+      }
 
       // this.geocoder = new google.maps.Geocoder();
       // const latlng = new google.maps.LatLng(41.9351088, -87.6419177); // default
