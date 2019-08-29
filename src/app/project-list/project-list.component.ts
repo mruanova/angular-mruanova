@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
+import { EnvService } from '../env.service';
+
 declare const google: any;
 let map;
 
@@ -10,20 +12,17 @@ let map;
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  @Input() url: string;
-  @Input() env: string;
-  @Input() key: string;
   title = '';
   projects = [];
   geocoder = null;
   map = null;
   callback$: Observable<any>;
 
-  constructor(private _apiService: ApiService) { };
+  constructor(private apiService: ApiService, private envService: EnvService) { };
 
   // get all the projects from the api
   ngOnInit() {
-    this.callback$ = this._apiService.getProjects(this.url, this.env, this.key);
+    this.callback$ = this.apiService.getProjects();
     this.callback$.subscribe((data) => {
       this.projects = data.Items.sort(function (a, b) {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
@@ -49,10 +48,12 @@ export class ProjectListComponent implements OnInit {
 
   // add a marker in google maps for each project
   addMarker(index, title, website, address) {
-    console.log(index);
-    console.log(title);
-    console.log(website);
-    console.log(address);
+    if (this.envService.debug) {
+      console.log(index);
+      console.log(title);
+      console.log(website);
+      console.log(address);
+    }
     this.geocoder.geocode({ 'address': address }, function (results, status) {
       if (status === 'OK') {
         const marker = new google.maps.Marker({

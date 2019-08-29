@@ -6,9 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  url: string = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com';
-  env: string = 'prod';
-  key: string = '';
   images: string[] = [
     'assets/img/giphy.gif',
   ];

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 //services
 import { ApiService } from './api.service';
 import { ProductService } from './product.service';
+import { EnvServiceProvider } from './env.service.provider';
 //components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -100,7 +101,7 @@ import { MatTreeModule } from '@angular/material/tree';
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [ApiService, ProductService],
+  providers: [ApiService, ProductService, EnvServiceProvider],
   bootstrap: [AppComponent]
 })
 
