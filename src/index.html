@@ -29,15 +29,37 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
   <!-- Load environment variables -->
   <script src="env.js"></script>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+  <!--
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v3.2.0/leaflet.markercluster.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v3.2.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v3.2.0/MarkerCluster.Default.css' rel='stylesheet' />
+  -->
+  <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
 </head>
 
 <body>
   <app-root></app-root>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // ready => center: [41.9351088, -87.6419177], zoom: 14
+      // ready => 
+      const center = [41.9351088, -87.6419177];
+      const zoom = 14;
+      /*
+      var mapGeo = L.mapbox.map('map_geo')
+        .setView([37.8, -96], 4)
+        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'));
+      var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);
+      mapGeo.scrollWheelZoom.disable();
+      */
+      L.mapbox.accessToken = 'pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
+      var map = L.mapbox.map('map')
+        .setView(center, zoom)
+        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+      /*
       mapboxgl.accessToken = 'pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
       var map = new mapboxgl.Map({
         container: 'map',
@@ -45,8 +67,9 @@
         center: [-90.96, -0.47],
         zoom: 8
       });
+      */
       // Add zoom and rotation controls to the map.
-      map.addControl(new mapboxgl.NavigationControl());
+      // map.addControl(new mapboxgl.NavigationControl());
       /*
       map.on('load', function () {
         // Add a symbol layer.
