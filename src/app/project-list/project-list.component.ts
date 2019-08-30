@@ -17,7 +17,7 @@ var geojson = {
     },
     properties: {
       title: 'Mapbox',
-      description: 'Washington, D.C.'
+      description: 'ECHO'
     }
   },
   {
@@ -28,10 +28,10 @@ var geojson = {
     },
     properties: {
       title: 'Mapbox',
-      description: 'San Francisco, California'
+      description: 'COATES'
     }
   }]
-};
+}; // 
 
 @Component({
   selector: 'project-list',
@@ -41,8 +41,10 @@ var geojson = {
 export class ProjectListComponent implements AfterViewInit {
   title = '';
   projects = [];
+  /*
   geocoder = null;
   map = null;
+  */
   callback$: Observable<any>;
 
   constructor(private apiService: ApiService, private envService: EnvService) { };
@@ -50,13 +52,13 @@ export class ProjectListComponent implements AfterViewInit {
   // get all the projects from the api
   ngAfterViewInit() {
     mapboxgl.accessToken = this.envService.token1 + '.' + this.envService.token2 + '.' + this.envService.token3;
-    var map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
       container: 'map',
       style: this.envService.style,
       center: this.envService.center,
       zoom: this.envService.zoom
     });
-
+    // api
     this.callback$ = this.apiService.getProjects();
     this.callback$.subscribe((data) => {
       this.projects = data.Items.sort(function (a, b) {
@@ -86,25 +88,17 @@ export class ProjectListComponent implements AfterViewInit {
         el.className = 'marker';
         console.log('marker', marker);
         // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
+        const pin = new mapboxgl.Marker()
           .setLngLat(marker.geometry.coordinates)
-          .addTo(map); // .addTo(mapboxgl);
+          .addTo(map); // mapboxgl
+        console.log('pin', pin);
       });
-      /*
-      // add markers to map
-      geojson.features.forEach(function (marker) {
-        // create a HTML element for each feature
-        var el = document.createElement('div');
-        el.className = 'marker';
-        console.log('marker', marker);
-        // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .addTo(mapboxgl);
-      });
-      */
     });
-
+    /*
+    var marker = new mapboxgl.Marker()
+      .setLngLat(this.envService.center)
+      .addTo(map);
+    */
     /*
       mapGeoCode(name, website, position, address) {
         this.geocoder.geocode({ 'address': address }, function (results, status) {
