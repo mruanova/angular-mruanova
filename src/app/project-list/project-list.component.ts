@@ -7,32 +7,6 @@ declare const mapboxgl: any;
 // declare const google: any; 
 // let map;
 
-var geojson = {
-  type: 'FeatureCollection',
-  features: [{
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-87.6455885, 41.897641]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'ECHO'
-    }
-  },
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-87.6581098, 41.8835165]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'COATES'
-    }
-  }]
-}; // 
-
 @Component({
   selector: 'project-list',
   templateUrl: './project-list.component.html',
@@ -81,17 +55,14 @@ export class ProjectListComponent implements AfterViewInit {
       }
       */
       // add markers to map
-      // this.projects.forEach(function (marker) {
-      geojson.features.forEach(function (marker) {
+      this.projects.forEach(function (marker) {
         // create a HTML element for each feature
         var el = document.createElement('div');
         el.className = 'marker';
-        console.log('marker', marker);
         // make a marker for each feature and add to the map
         const pin = new mapboxgl.Marker()
-          .setLngLat(marker.geometry.coordinates)
+          .setLngLat(marker.coordinates)
           .addTo(map); // mapboxgl
-        console.log('pin', pin);
       });
     });
     /*
