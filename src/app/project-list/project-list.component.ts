@@ -58,12 +58,11 @@ export class ProjectListComponent implements AfterViewInit {
         // create a HTML element for each feature
         var el = document.createElement('div');
         el.className = 'marker';
-        new mapboxgl.Marker()
+        const popup = this.createPopup(project.Name, project.Website, project.Address, project.Coordinates);
+        const marker = new mapboxgl.Marker()
           .setLngLat(project.Coordinates)
+          .setPopup(popup) // sets a popup on this marker
           .addTo(map);
-        if (this.envService.debug) {
-          console.log('project', project);
-        }
       });
       // animate
       setTimeout(() => {
@@ -72,14 +71,7 @@ export class ProjectListComponent implements AfterViewInit {
     });
   };
 
-  mapGeoCode(name, website, position, address, coordinates) {
-    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-    map.flyTo({ center: coordinates });
-    console.log('geocode.name', name)
-    console.log('geocode.website', website)
-    console.log('geocode.position', position)
-    console.log('geocode.address', address)
-    console.log('geocode.coordinates', coordinates)
+  createPopup(name, website, address, coordinates) {
     // make a marker for each feature and add to the map
     const contentString = '<div id="content">' +
       '<div class="link2">' + name + '</div>' +
@@ -88,9 +80,24 @@ export class ProjectListComponent implements AfterViewInit {
       '<div class="address">' + address + '</div>' +
       '</div>' +
       '</div>';
-    var infowindow = new mapboxgl.Popup({ closeOnClick: false })
+    var popup = new mapboxgl.Popup({ closeOnClick: false, offset: 25 })
       .setLngLat(coordinates)
       .setHTML(contentString)
       .addTo(map);
+    // .setText('Construction on the Washington Monument began in 1848.')
+    return popup;
+  };
+
+  mapGeoCode(name, website, position, address, coordinates) {
+    if (this.envService.debug) {
+      console.log('geocode.name', name);
+      console.log('geocode.website', website);
+      console.log('geocode.position', position);
+      console.log('geocode.address', address);
+      console.log('geocode.coordinates', coordinates);
+    }
+    var popup = this.createPopup(name, website, address, coordinates);
+    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+    map.flyTo({ center: coordinates });
   };
 };
