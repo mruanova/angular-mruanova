@@ -33,6 +33,11 @@ export class ProjectListComponent implements AfterViewInit {
       zoom: this.envService.zoom
     });
 
+    // TODO: "icon-image": "rocket-15"
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'symbols', function () {
       map.getCanvas().style.cursor = 'pointer';
@@ -50,83 +55,31 @@ export class ProjectListComponent implements AfterViewInit {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
       // add markers to map
-      this.projects.forEach((marker) => {
+      this.projects.forEach((project) => {
         // create a HTML element for each feature
         var el = document.createElement('div');
         el.className = 'marker';
         // make a marker for each feature and add to the map
-        const pin = new mapboxgl.Marker()
-          .setLngLat(marker.Coordinates)
-          .addTo(map); // mapboxgl
+        new mapboxgl.Marker()
+          .setLngLat(project.Coordinates)
+          .addTo(map);
+        // https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
+        /*
+        var popup = new mapboxgl.Popup({ closeOnClick: false })
+          .setLngLat(project.Coordinates)
+          .setHTML('<h1>Hello World!</h1>')
+          .addTo(map); // infowindow
+        */
         if (this.envService.debug) {
-          console.log('project', marker);
+          console.log('project', project);
         }
       });
+      // animate
+      setTimeout(() => {
+        map.flyTo({ center: this.projects[0].Coordinates });
+      }, 3000);
     });
   };
-
-  /*
-  L.mapbox.accessToken = '..';
-  var map = L.mapbox.map('map')
-  .setView(center, zoom)
-  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
-  */
-  // Add zoom and rotation controls to the map.
-  // map.addControl(new mapboxgl.NavigationControl());
-  /*
-  map.on('load', function () {
-    // Add a symbol layer.
-    map.addLayer({
-      "id": "symbols",
-      "type": "symbol",
-      "source": {
-        "type": "geojson",
-        "data": {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -91.395263671875,
-                  -0.9145729757782163
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -90.32958984375,
-                  -0.6344474832838974
-                ]
-              }
-            },
-            {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -91.34033203125,
-                  0.01647949196029245
-                ]
-              }
-            }
-          ]
-        }
-      },
-      "layout": {
-        "icon-image": "rocket-15"
-      }
-    });
-
-  });
-  */
 
   mapGeoCode(name, website, position, address, coordinates) {
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
@@ -162,45 +115,6 @@ export class ProjectListComponent implements AfterViewInit {
           infowindow.open(map, marker);
         });
         infowindow.open(map, marker);
-      }
-    });
-    */
-  };
-
-  // add a marker in google maps for each project
-  addMarker(index, title, website, address) {
-    if (this.envService.debug) {
-      console.log(index);
-      console.log(title);
-      console.log(website);
-      console.log(address);
-    }
-
-    /*
-    this.geocoder.geocode({ 'address': address }, function (results, status) {
-      if (status === 'OK') {
-        const marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          title: title
-        });
-        // markers.push(marker);
-        const contentString = '<div id="content">' +
-          '<div class="company">' + title + '</div>' +
-          '<div id="bodyContent">' +
-          '<div class="website">' + website + '</div>' +
-          '<div class="address">' + address + '</div>' +
-          '</div>' +
-          '</div>';
-        const infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        if (index === 1) {
-          infowindow.open(map, marker);
-        }
-        marker.addListener('click', function () {
-          infowindow.open(map, marker);
-        });
       }
     });
     */
