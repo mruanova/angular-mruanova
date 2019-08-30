@@ -30,7 +30,6 @@ export class ProjectListComponent implements OnInit {
       if (this.envService.debug) {
         console.log('projects', this.projects);
       }
-
       // this.geocoder = new google.maps.Geocoder();
       // const latlng = new google.maps.LatLng(41.9351088, -87.6419177); // default
       // const mapOptions = {zoom: 14, center: latlng};
@@ -55,6 +54,7 @@ export class ProjectListComponent implements OnInit {
       console.log(website);
       console.log(address);
     }
+
     /*
     this.geocoder.geocode({ 'address': address }, function (results, status) {
       if (status === 'OK') {

@@ -9,6 +9,11 @@ export class EnvService {
   // Whether or not to enable debug mode
   public debug = true;
 
-  // access token
-  public mapbox = '';
+  // map
+  public center = null;
+  public zoom = null;
+  public token1 = '';
+  public token2 = '';
+  public token3 = '';
+  public style = '';
 }

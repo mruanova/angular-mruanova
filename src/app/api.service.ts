@@ -11,7 +11,7 @@ export class ApiService {
   ) {
     this.url = envService.apiUrl;
     if(envService.debug) {
-      console.log('env.js', envService.mapbox)
+      console.log('API', this.url)
     }
   };
 

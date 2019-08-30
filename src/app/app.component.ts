@@ -47,14 +47,5 @@ export class AppComponent implements OnInit {
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
     */
-    // https://www.mapbox.com/install/js/cdn-complete/
-    // https://docs.mapbox.com/mapbox-gl-js/example/center-on-symbol/
-    // https://docs.mapbox.com/mapbox-gl-js/example/animate-a-line/
-    /*
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'assets/map.js';
-    document.getElementsByTagName('head')[0].appendChild(script);
-    */
   }
 };
