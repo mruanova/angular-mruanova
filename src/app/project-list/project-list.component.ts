@@ -5,7 +5,7 @@ import { EnvService } from '../env.service';
 
 declare const mapboxgl: any;
 // declare const google: any; 
-// let map;
+let map;
 
 @Component({
   selector: 'project-list',
@@ -26,7 +26,7 @@ export class ProjectListComponent implements AfterViewInit {
   // get all the projects from the api
   ngAfterViewInit() {
     mapboxgl.accessToken = this.envService.token1 + '.' + this.envService.token2 + '.' + this.envService.token3;
-    const map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
       container: 'map',
       style: this.envService.style,
       center: this.envService.center,
@@ -65,118 +65,118 @@ export class ProjectListComponent implements AfterViewInit {
           .addTo(map); // mapboxgl
       });
     });
-    /*
-    var marker = new mapboxgl.Marker()
-      .setLngLat(this.envService.center)
-      .addTo(map);
-    */
-    /*
-      mapGeoCode(name, website, position, address) {
-        this.geocoder.geocode({ 'address': address }, function (results, status) {
-          if (status === 'OK') {
-            // set center of the map
-            map.setCenter(results[0].geometry.location);
-            const marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location,
-              title: name
-            });
-            const contentString = '<div id="content">' +
-              '<div class="link2">' + name + '</div>' +
-              '<div id="bodyContent">' +
-              '<div class="website">' + website + '</div>' +
-              '<div class="address">' + address + '</div>' +
-              '</div>' +
-              '</div>';
-            const infowindow = new google.maps.InfoWindow({
-              content: contentString
-            });
-            marker.addListener('click', function () {
-              infowindow.open(map, marker);
-            });
-            infowindow.open(map, marker);
-          }
-        });
-      };
-    */
 
-    /*
-    L.mapbox.accessToken = '..';
-    var map = L.mapbox.map('map')
-    .setView(center, zoom)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
-    */
-    // Add zoom and rotation controls to the map.
-    // map.addControl(new mapboxgl.NavigationControl());
-    /*
-    map.on('load', function () {
-      // Add a symbol layer.
-      map.addLayer({
-        "id": "symbols",
-        "type": "symbol",
-        "source": {
-          "type": "geojson",
-          "data": {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                    -91.395263671875,
-                    -0.9145729757782163
+  };
 
-                  ]
-                }
-              },
-              {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                    -90.32958984375,
-                    -0.6344474832838974
-                  ]
-                }
-              },
-              {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                    -91.34033203125,
-                    0.01647949196029245
-                  ]
-                }
+  /*
+  L.mapbox.accessToken = '..';
+  var map = L.mapbox.map('map')
+  .setView(center, zoom)
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+  */
+  // Add zoom and rotation controls to the map.
+  // map.addControl(new mapboxgl.NavigationControl());
+  /*
+  map.on('load', function () {
+    // Add a symbol layer.
+    map.addLayer({
+      "id": "symbols",
+      "type": "symbol",
+      "source": {
+        "type": "geojson",
+        "data": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -91.395263671875,
+                  -0.9145729757782163
+                ]
               }
-            ]
-          }
-        },
-        "layout": {
-          "icon-image": "rocket-15"
+            },
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -90.32958984375,
+                  -0.6344474832838974
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -91.34033203125,
+                  0.01647949196029245
+                ]
+              }
+            }
+          ]
         }
-      });
+      },
+      "layout": {
+        "icon-image": "rocket-15"
+      }
+    });
 
-      // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-      map.on('click', 'symbols', function (e) {
-        map.flyTo({ center: e.features[0].geometry.coordinates });
-      });
+    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+    map.on('click', 'symbols', function (e) {
+      map.flyTo({ center: e.features[0].geometry.coordinates });
+    });
 
-      // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
-      map.on('mouseenter', 'symbols', function () {
-        map.getCanvas().style.cursor = 'pointer';
-      });
+    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+    map.on('mouseenter', 'symbols', function () {
+      map.getCanvas().style.cursor = 'pointer';
+    });
 
-      // Change it back to a pointer when it leaves.
-      map.on('mouseleave', 'symbols', function () {
-        map.getCanvas().style.cursor = '';
-      });
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'symbols', function () {
+      map.getCanvas().style.cursor = '';
+    });
+  });
+  */
+
+  mapGeoCode(name, website, position, address) {
+    /*
+    this.geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status === 'OK') {
+        // set center of the map
+        map.setCenter(results[0].geometry.location);
+        const marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          title: name
+        });
+        const contentString = '<div id="content">' +
+          '<div class="link2">' + name + '</div>' +
+          '<div id="bodyContent">' +
+          '<div class="website">' + website + '</div>' +
+          '<div class="address">' + address + '</div>' +
+          '</div>' +
+          '</div>';
+        const infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        marker.addListener('click', function () {
+          infowindow.open(map, marker);
+        });
+        infowindow.open(map, marker);
+      }
     });
     */
+    map.addControl(new mapboxgl.MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
   };
 
   // add a marker in google maps for each project
