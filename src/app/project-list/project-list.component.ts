@@ -2,10 +2,10 @@ import { Component, AfterViewInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import { EnvService } from '../env.service';
-import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import * as mapboxgl from 'mapbox-gl';
+import { Map } from 'mapbox-gl';
 
-declare const mapboxgl: any;
-let map;
+let map: Map;
 
 @Component({
   selector: 'project-list',
@@ -17,7 +17,6 @@ export class ProjectListComponent implements AfterViewInit {
   projects = [];
   accessToken = null;
   callback$: Observable<any>;
-  geocoder: MapboxGeocoder;
 
   constructor(private apiService: ApiService, private envService: EnvService) {
     this.accessToken = envService.token1 + '.' + envService.token2 + '.' + envService.token3;
@@ -69,18 +68,18 @@ export class ProjectListComponent implements AfterViewInit {
       // animate
       setTimeout(() => {
         map.flyTo({ center: this.projects[0].Coordinates });
-      }, 3000);
+      }, 1500);
     });
   };
 
   mapGeoCode(name, website, position, address, coordinates) {
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.flyTo({ center: coordinates });
-    console.log('geocoder.name', name)
-    console.log('geocoder.website', website)
-    console.log('geocoder.position', position)
-    console.log('geocoder.address', address)
-    console.log('geocoder.coordinates', coordinates)
+    console.log('geocode.name', name)
+    console.log('geocode.website', website)
+    console.log('geocode.position', position)
+    console.log('geocode.address', address)
+    console.log('geocode.coordinates', coordinates)
     // make a marker for each feature and add to the map
     const contentString = '<div id="content">' +
       '<div class="link2">' + name + '</div>' +
