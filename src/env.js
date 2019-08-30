@@ -15,7 +15,7 @@
     */
     // mapbox
     window.__env.center = [-87.6419177, 41.9351088];
-    window.__env.zoom = 13;
+    window.__env.zoom = 14;
     window.__env.token1 = 'pk';
     window.__env.token2 = 'eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9';
     window.__env.token3 = '2iSMaogLhpWWMBql2_SBFg';

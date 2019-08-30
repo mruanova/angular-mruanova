@@ -66,7 +66,11 @@ export class ProjectListComponent implements AfterViewInit {
       });
       // animate
       setTimeout(() => {
-        map.flyTo({ center: this.projects[0].Coordinates });
+        this.mapGeoCode(this.projects[0].Name, 
+          this.projects[0].Website, 
+          this.projects[0].Position, 
+          this.projects[0].Address, 
+          this.projects[0].Coordinates)
       }, 1500);
     });
   };
