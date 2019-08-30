@@ -44,6 +44,20 @@ export class ProjectListComponent implements OnInit {
           this.projects[project].Address);
       }
       */
+      // add markers to map
+      this.projects.forEach(function (marker) {
+        // create a HTML element for each feature
+        var el = document.createElement('div');
+        el.className = 'marker';
+        console.log('marker', marker);
+        // make a marker for each feature and add to the map
+        /*
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(mapboxgl);
+        */
+      });
+      // ************
       var geojson = {
         type: 'FeatureCollection',
         features: [{
@@ -69,20 +83,19 @@ export class ProjectListComponent implements OnInit {
           }
         }]
       };
+      /*
       // add markers to map
       geojson.features.forEach(function (marker) {
         // create a HTML element for each feature
         var el = document.createElement('div');
         el.className = 'marker';
-
+        console.log('marker', marker);
         // make a marker for each feature and add to the map
-        /*
         new mapboxgl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .addTo(mapboxgl);
-        */
       });
-
+      */
     });
   };
 
