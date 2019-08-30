@@ -59,17 +59,9 @@ export class ProjectListComponent implements AfterViewInit {
         // create a HTML element for each feature
         var el = document.createElement('div');
         el.className = 'marker';
-        // make a marker for each feature and add to the map
         new mapboxgl.Marker()
           .setLngLat(project.Coordinates)
           .addTo(map);
-        // https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
-        /*
-        var popup = new mapboxgl.Popup({ closeOnClick: false })
-          .setLngLat(project.Coordinates)
-          .setHTML('<h1>Hello World!</h1>')
-          .addTo(map); // infowindow
-        */
         if (this.envService.debug) {
           console.log('project', project);
         }
@@ -89,34 +81,17 @@ export class ProjectListComponent implements AfterViewInit {
     console.log('geocoder.position', position)
     console.log('geocoder.address', address)
     console.log('geocoder.coordinates', coordinates)
-
-
-    /*
-    this.geocoder.geocode({ 'address': address }, function (results, status) {
-      if (status === 'OK') {
-        // set center of the map
-        map.setCenter(results[0].geometry.location);
-        const marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          title: name
-        });
-        const contentString = '<div id="content">' +
-          '<div class="link2">' + name + '</div>' +
-          '<div id="bodyContent">' +
-          '<div class="website">' + website + '</div>' +
-          '<div class="address">' + address + '</div>' +
-          '</div>' +
-          '</div>';
-        const infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        marker.addListener('click', function () {
-          infowindow.open(map, marker);
-        });
-        infowindow.open(map, marker);
-      }
-    });
-    */
+    // make a marker for each feature and add to the map
+    const contentString = '<div id="content">' +
+      '<div class="link2">' + name + '</div>' +
+      '<div id="bodyContent">' +
+      '<div class="website">' + website + '</div>' +
+      '<div class="address">' + address + '</div>' +
+      '</div>' +
+      '</div>';
+    var infowindow = new mapboxgl.Popup({ closeOnClick: false })
+      .setLngLat(coordinates)
+      .setHTML(contentString)
+      .addTo(map);
   };
 };
