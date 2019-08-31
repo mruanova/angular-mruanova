@@ -19,6 +19,7 @@ x
 $ curl -d
 "coordinates=2.344003,48.85805;2.34675,48.85727;2.34868,48.85936;2.34955,48.86084;2.34955,48.86088;2.349625,48.86102;2.34982,48.86125&steps=true&waypoints=0;6&waypoint_names=Home;Work&banner_instructions=true" "https://api.mapbox.com/directions/v5/mapbox/driving?access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg"
 */
+
 /*
 http://www.liedman.net/leaflet-routing-machine/
 https://github.com/perliedman/leaflet-routing-machine
@@ -40,7 +41,6 @@ L.Routing.control({
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements AfterViewInit {
-  title = '';
   projects = [];
   accessToken = null;
   callback$: Observable<any>;
@@ -75,21 +75,20 @@ export class ProjectListComponent implements AfterViewInit {
     });
 
     // api
+    this.getProjects();
+  };
+
+  getProjects() {
+    // observable
     this.callback$ = this.apiService.getProjects();
     this.callback$.subscribe((data) => {
+      // sort
       this.projects = data.Items.sort((a, b) => {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
       // add markers to map
       this.projects.forEach((project) => {
-        // create a HTML element for each feature
-        var el = document.createElement('div');
-        el.className = 'marker';
-        const popup = this.createPopup(project);
-        const marker = new mapboxgl.Marker()
-          .setLngLat(project.Coordinates)
-          .setPopup(popup) // sets a popup on this marker
-          .addTo(map);
+        this.initMarker(project);
       });
       // animate
       setTimeout(() => {
@@ -98,7 +97,18 @@ export class ProjectListComponent implements AfterViewInit {
     });
   };
 
-  createPopup(project) {
+  initMarker(project) {
+    // create a HTML element for each feature
+    var el = document.createElement('div');
+    el.className = 'marker';
+    const popup = this.initPopup(project);
+    const marker = new mapboxgl.Marker()
+      .setLngLat(project.Coordinates)
+      .setPopup(popup) // sets a popup on this marker
+      .addTo(map);
+  };
+
+  initPopup(project) {
     // make a marker for each feature and add to the map
     const contentString = '<div id="content">' +
       '<div class="link2">' + project.Name + '</div>' +
@@ -119,7 +129,7 @@ export class ProjectListComponent implements AfterViewInit {
     if (this.envService.debug) {
       console.log('clicked', project);
     }
-    var popup = this.createPopup(project);
+    var popup = this.initPopup(project);
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.flyTo({ center: project.Coordinates });
   };
