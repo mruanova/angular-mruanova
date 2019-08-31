@@ -2,7 +2,7 @@
     <img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 150px" />
 </li>
 <li *ngFor='let project of projects'>
-    <span (click)='mapGeoCode(project.Name,project.Website,project.Position,project.Address,project.Coordinates);'>
+    <span (click)='onClick(project);'>
         <img src='assets/img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
         <div class='company'>{{project.Name}}</div>
         <div class='position'>{{project.Position}}</div>
