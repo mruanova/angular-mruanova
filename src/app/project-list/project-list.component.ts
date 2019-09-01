@@ -3,9 +3,12 @@ import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import { EnvService } from '../env.service';
 import * as mapboxgl from 'mapbox-gl';
-import { Map } from 'mapbox-gl';
+import { Map, MapboxDirections } from 'mapbox-gl';
 
 let map: Map;
+
+// https://labs.mapbox.com/bites/00321/#14.31/38.9107/-77.0373
+// https://docs.mapbox.com/help/how-mapbox-works/directions/
 
 // https://docs.mapbox.com/api/#directions
 // /directions/v5/{profile}/{coordinates}.
@@ -28,7 +31,7 @@ $ curl -d
 export class ProjectListComponent implements AfterViewInit {
   projects = [];
   accessToken = null;
-  callback$: Observable<any>;
+  callback$: Observable<any>; // TODO: async pipe
 
   constructor(private apiService: ApiService, private envService: EnvService) {
     this.accessToken = envService.token1 + '.' + envService.token2 + '.' + envService.token3;
@@ -44,10 +47,36 @@ export class ProjectListComponent implements AfterViewInit {
       zoom: this.envService.zoom
     });
 
-    // TODO: "icon-image": "rocket-15"
+    // https://github.com/mapbox/mapbox-gl-directions/blob/master/API.md
+    /*
+    var directions = new MapboxDirections({
+      accessToken: this.accessToken,
+      unit: 'metric',
+      profile: 'cycling'
+    });
+    map.addControl(directions);
+    */
+
+    /*
+    var directions = new mapboxgl.Directions({
+      unit: 'metric',
+      profile: 'driving',
+      container: 'directions',
+      interactive: false,
+      controls: false,
+      proximity: [-117.3186111, 33.10388889]
+    });
+    directions.setOrigin([-117.1425, 32.63638889]);
+    directions.addWaypoint(0, [-117.1425, 32.63638889]);
+    directions.addWaypoint(1, [-117.195, 32.75416667]);
+    directions.addWaypoint(2, [-116.5616667, 32.93583333]);
+    directions.setDestination([-116.5616667, 32.93583333]);
+    map.addControl(directions);
+    */
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
+    // map.addControl(new mapboxgl.Directions());
 
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'symbols', function () {
@@ -59,12 +88,35 @@ export class ProjectListComponent implements AfterViewInit {
       map.getCanvas().style.cursor = '';
     });
 
-    // api
+    // api mruanova/projects
     this.getProjects();
+
+    // driving directions
+    /*
+    map.on('load', () => {
+      if (this.envService.debug) {
+        console.log('driving', driving)
+      }
+      const coordinates = [];
+      coordinates.push(this.envService.center);
+      coordinates.push([-87.651952, 41.948976]);
+      coordinates.push([-87.646014, 41.897464]);
+      coordinates.push([-87.6455885, 41.897641]);
+      // observable
+      this.callback$ = this.apiService.get(driving);
+      this.callback$.subscribe((data) => {
+        if (this.envService.debug) {
+          console.log('response', data)
+          // map.addLayer(data);
+          map.addLayer(this.initLineString(coordinates));
+        }
+      });
+    });
+    */
   };
 
   initLineString(coordinates) {
-    return {
+    const temp = {
       "id": "route",
       "type": "line",
       "source": {
@@ -84,20 +136,31 @@ export class ProjectListComponent implements AfterViewInit {
       },
       "paint": {
         "line-color": "#888",
-        "line-width": 8
+        "line-width": 5
       }
     };
+    return temp;
   };
 
   getProjects() {
+    const url = this.envService.apiUrl;
+    if (this.envService.debug) {
+      console.log('API', url)
+    }
     const coordinates = []; // this.envService.center
+
     // observable
-    this.callback$ = this.apiService.getProjects();
+    this.callback$ = this.apiService.get(url);
     this.callback$.subscribe((data) => {
+      if (this.envService.debug) {
+        console.log('response', data)
+      }
+
       // sort
       this.projects = data.Items.sort((a, b) => {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
+
       // add markers to map
       this.projects.forEach((project) => {
         if (project.Address.indexOf('Chicago') > 0) {
@@ -105,10 +168,12 @@ export class ProjectListComponent implements AfterViewInit {
         }
         this.initMarker(project);
       });
+
       // animate
       setTimeout(() => {
         this.onClick(this.projects[0])
       }, 1500);
+
       // directions
       map.on('load', () => {
         map.addLayer(this.initLineString(coordinates));
@@ -125,6 +190,7 @@ export class ProjectListComponent implements AfterViewInit {
       .setLngLat(project.Coordinates)
       .setPopup(popup) // sets a popup on this marker
       .addTo(map);
+    // TODO: "icon-image": "rocket-15"
   };
 
   initPopup(project) {
