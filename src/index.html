@@ -29,13 +29,15 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
   <!-- Load environment variables -->
   <script src="env.js"></script>
-  <!-- mapbox-gl-js -->
+  <!-- store locally -->
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
-  <app-root>loading</app-root>
+  <app-root>
+    <img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 150px" />
+  </app-root>
   <div id="map" class="container"></div>
 
   <script>

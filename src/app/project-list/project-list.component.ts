@@ -63,7 +63,34 @@ export class ProjectListComponent implements AfterViewInit {
     this.getProjects();
   };
 
+  initLineString(coordinates) {
+    return {
+      "id": "route",
+      "type": "line",
+      "source": {
+        "type": "geojson",
+        "data": {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": coordinates
+          }
+        }
+      },
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#888",
+        "line-width": 8
+      }
+    };
+  };
+
   getProjects() {
+    const coordinates = []; // this.envService.center
     // observable
     this.callback$ = this.apiService.getProjects();
     this.callback$.subscribe((data) => {
@@ -73,12 +100,19 @@ export class ProjectListComponent implements AfterViewInit {
       });
       // add markers to map
       this.projects.forEach((project) => {
+        if (project.Address.indexOf('Chicago') > 0) {
+          coordinates.push(project.Coordinates);
+        }
         this.initMarker(project);
       });
       // animate
       setTimeout(() => {
         this.onClick(this.projects[0])
       }, 1500);
+      // directions
+      map.on('load', () => {
+        map.addLayer(this.initLineString(coordinates));
+      });
     });
   };
 
