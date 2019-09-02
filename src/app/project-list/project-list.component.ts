@@ -3,25 +3,11 @@ import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import { EnvService } from '../env.service';
 import * as mapboxgl from 'mapbox-gl';
-import { Map, MapboxDirections } from 'mapbox-gl';
-
+import { Map } from 'mapbox-gl';
+// import { MapboxDirections } from '@mapbox/mapbox-gl-directions';
+// https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
 let map: Map;
 
-// https://labs.mapbox.com/bites/00321/#14.31/38.9107/-77.0373
-// https://docs.mapbox.com/help/how-mapbox-works/directions/
-
-// https://docs.mapbox.com/api/#directions
-// /directions/v5/{profile}/{coordinates}.
-const test = 'https://api.mapbox.com/directions/v5/mapbox/driving/-73.989%2C40.733%3B-74%2C40.733.json?access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
-/*
-# POST request to Map Matching API
-$ curl -d
-"coordinates=-117.17282,32.71204;-117.17288,32.71225;-117.17293,32.71244;-117.17292,32.71256;-117.17298,32.712603;-117.17314,32.71259;-117.17334,32.71254" "https://api.mapbox.com/matching/v5/mapbox/driving?access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg"
-x
-# POST request to Directions API with optional parameters
-$ curl -d
-"coordinates=2.344003,48.85805;2.34675,48.85727;2.34868,48.85936;2.34955,48.86084;2.34955,48.86088;2.349625,48.86102;2.34982,48.86125&steps=true&waypoints=0;6&waypoint_names=Home;Work&banner_instructions=true" "https://api.mapbox.com/directions/v5/mapbox/driving?access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg"
-*/
 
 @Component({
   selector: 'project-list',
@@ -35,6 +21,7 @@ export class ProjectListComponent implements AfterViewInit {
 
   constructor(private apiService: ApiService, private envService: EnvService) {
     this.accessToken = envService.token1 + '.' + envService.token2 + '.' + envService.token3;
+    localStorage.setItem('MapboxAccessToken', this.accessToken);
   };
 
   // get all the projects from the api
@@ -113,6 +100,21 @@ export class ProjectListComponent implements AfterViewInit {
       });
     });
     */
+
+    // directions
+    /*
+    var directions = new MapboxDirections({
+      accessToken: this.accessToken,
+      unit: 'metric',
+      profile: 'mapbox/driving'
+    });
+    */
+    // var directions = new mapboxgl.Directions({ unit: 'metric', profile: 'cycling' });
+    /*
+    map.addControl(new MapboxDirections({
+      accessToken: this.accessToken
+    }), 'top-left');
+    */
   };
 
   initLineString(coordinates) {
@@ -174,7 +176,7 @@ export class ProjectListComponent implements AfterViewInit {
         this.onClick(this.projects[0])
       }, 1500);
 
-      // directions
+      // line
       map.on('load', () => {
         map.addLayer(this.initLineString(coordinates));
       });
@@ -218,4 +220,131 @@ export class ProjectListComponent implements AfterViewInit {
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.flyTo({ center: project.Coordinates });
   };
+
+
+  // https://api.mapbox.com/matching/v5/mapbox/driving/-122.41726781632528,37.805181910286095;-122.40676819342406,37.79796473677784;-122.41839060836948,37.79628622326355;-122.4148401578509,37.80163335496064?geometries=geojson&radiuses=25;25;25;25&steps=true&access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg
+
+  // Make a Map Matching request
+  /*
+  getMatch(coordinates, radius, profile) {
+    // Separate the radiuses with semicolons
+    var radiuses = radius.join(';')
+    // Create the query
+    var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=true&access_token=' + mapboxgl.accessToken;
+    console.log(query)
+    $.ajax({
+      method: 'GET',
+      url: query
+    }).done((data) => {
+      var coords = data.matchings[0].geometry;
+      // Draw the route on the map
+      this.addRoute(coords);
+      this.getInstructions(data.matchings[0]);
+    });
+  };
+  */
+
+  addRoute(coords) {
+    // If a route is already loaded, remove it
+    if (map.getSource('route')) {
+      map.removeLayer('route')
+      map.removeSource('route')
+    } else {
+      map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+          "type": "geojson",
+          "data": {
+            "type": "Feature",
+            "properties": {},
+            "geometry": coords
+          }
+        },
+        "layout": {
+          "line-join": "round",
+          "line-cap": "round"
+        },
+        "paint": {
+          "line-color": "#03AA46",
+          "line-width": 8,
+          "line-opacity": 0.8
+        }
+      });
+    };
+  };
+
+  getInstructions(data) {
+    // Target the sidebar to add the instructions
+    var directions = document.getElementById('directions');
+    var legs = data.legs;
+    var tripDirections = [];
+    // Output the instructions for each step of each leg in the response object
+    for (var i = 0; i < legs.length; i++) {
+      var steps = legs[i].steps;
+      for (var j = 0; j < steps.length; j++) {
+        tripDirections.push('<br><li>' + steps[j].maneuver.instruction) + '</li>';
+      }
+    }
+    directions.innerHTML = '<br><h2>Trip duration: ' + Math.floor(data.duration / 60) + ' min.</h2>' + tripDirections;
+  };
+
+  // map.on('draw.delete', removeRoute);
+
+  // If the user clicks the delete draw button, remove the layer if it exists
+  removeRoute() {
+    if (map.getSource('route')) {
+      map.removeLayer('route');
+      map.removeSource('route');
+    } else {
+      return;
+    }
+  };
+
+  // https://github.com/mapbox/mapbox-gl-directions
+  // https://docs.mapbox.com/api-playground/#/directions/?_k=86u7o8
+  // /directions/v5/{profile}/{coordinates}.
+  /*
+  const directions = 'https://api.mapbox.com/directions/v5/mapbox/driving/-87.651%2C41.948%3B-87.645%2C41.897.json?overview=full&access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
+  const json = {
+    "routes": [
+      {
+        "geometry": "i}__Gvi~uO@vDtBCEg[aGwWfu@a]vZub@rM}Cz[Ax_Bq]~B`GkEnOPbGrAvCzIB^|~@xyAkBD~K",
+        "legs": [
+          {
+            "summary": "",
+            "weight": 1529.2,
+            "duration": 1076,
+            "steps": [],
+            "distance": 8588.4
+          }
+        ],
+        "weight_name": "routability",
+        "weight": 1529.2,
+        "duration": 1076,
+        "distance": 8588.4
+      }
+    ],
+    "waypoints": [
+      {
+        "distance": 12.442359661918866,
+        "name": "",
+        "location": [
+          -87.650997,
+          41.947888
+        ]
+      },
+      {
+        "distance": 61.21021573140122,
+        "name": "West Chicago Avenue",
+        "location": [
+          -87.644986,
+          41.896449
+        ]
+      }
+    ],
+    "code": "Ok",
+    "uuid": "ck01p5cru0yas4cnrxyr284e3"
+  };
+  */
 };
