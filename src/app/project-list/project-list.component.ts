@@ -52,7 +52,7 @@ export class ProjectListComponent implements AfterViewInit {
 
   };
 
-  initLineString(coordinates) {
+  initLineString(coords) {
     const temp = {
       "id": "route",
       "type": "line",
@@ -61,10 +61,7 @@ export class ProjectListComponent implements AfterViewInit {
         "data": {
           "type": "Feature",
           "properties": {},
-          "geometry": {
-            "type": "LineString",
-            "coordinates": coordinates
-          }
+          "geometry": coords
         }
       },
       "layout": {
@@ -72,8 +69,9 @@ export class ProjectListComponent implements AfterViewInit {
         "line-cap": "round"
       },
       "paint": {
-        "line-color": "#888",
-        "line-width": 5
+        "line-color": "#03AA46",
+        "line-width": 8,
+        "line-opacity": 0.8
       }
     };
     return temp;
@@ -180,28 +178,7 @@ export class ProjectListComponent implements AfterViewInit {
       map.removeLayer('route')
       map.removeSource('route')
     } else {
-      map.addLayer({
-        "id": "route",
-        "type": "line",
-        "source": {
-          "type": "geojson",
-          "data": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": coords
-          }
-        },
-        "layout": {
-          "line-join": "round",
-          "line-cap": "round"
-        },
-        "paint": {
-          "line-color": "#03AA46",
-          "line-width": 8,
-          "line-opacity": 0.8
-        }
-      });
+      map.addLayer(this.initLineString(coords));
     };
   };
-
 };
