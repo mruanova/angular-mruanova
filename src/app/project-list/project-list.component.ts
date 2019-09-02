@@ -15,7 +15,7 @@ let map: Map;
 export class ProjectListComponent implements AfterViewInit {
   projects = [];
   accessToken = null;
-  callback$: Observable<any>; // TODO: async pipe
+  callback$: Observable<any>; // async
   driving$: Observable<any>;
 
   constructor(private apiService: ApiService, private envService: EnvService) {
@@ -35,7 +35,6 @@ export class ProjectListComponent implements AfterViewInit {
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
-    // map.addControl(new mapboxgl.Directions());
 
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'symbols', function () {
@@ -52,7 +51,6 @@ export class ProjectListComponent implements AfterViewInit {
 
     // line
     map.on('load', () => {
-      // https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
       console.log('Map Loaded');
 
       let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/';
@@ -67,7 +65,7 @@ export class ProjectListComponent implements AfterViewInit {
       this.driving$.subscribe((data) => {
         const coords = data.matchings[0].geometry;
         // Draw matching driving directions route on the map
-        map.addLayer(this.initFeatureRoute(coords));
+        const layer = map.addLayer(this.initFeatureRoute(coords));
       });
     });
   };
@@ -90,8 +88,9 @@ export class ProjectListComponent implements AfterViewInit {
       },
       "paint": {
         "line-color": "#03AA46",
-        "line-width": 8,
-        "line-opacity": 0.8
+        "line-width": 4,
+        "line-opacity": 0.8,
+        'line-dasharray': [2, 2]
       }
     };
     // "geometry": {"type": "LineString","coordinates": coordinates}
@@ -140,6 +139,7 @@ export class ProjectListComponent implements AfterViewInit {
     const marker = new mapboxgl.Marker()
       .setLngLat(project.Coordinates)
       .setPopup(popup) // sets a popup on this marker
+      // .setIcon()
       .addTo(map);
   };
 
@@ -156,7 +156,6 @@ export class ProjectListComponent implements AfterViewInit {
       .setLngLat(project.Coordinates)
       .setHTML(contentString)
       .addTo(map);
-    // .setText('Construction on the Washington Monument began in 1848.')
     return popup;
   };
 
