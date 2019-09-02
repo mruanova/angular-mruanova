@@ -165,7 +165,7 @@ export class ProjectListComponent implements AfterViewInit {
 
   onClick(project) {
     if (this.envService.debug) {
-      console.log('clicked', project);
+      console.log('Project Clicked', project);
     }
     var popup = this.initPopup(project);
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
