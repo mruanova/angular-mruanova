@@ -16,7 +16,7 @@ export class ProjectListComponent implements AfterViewInit {
   projects = [];
   accessToken = null;
   callback$: Observable<any>; // TODO: async pipe
-  driving$: Observable<any>; // TODO: async pipe
+  driving$: Observable<any>;
 
   constructor(private apiService: ApiService, private envService: EnvService) {
     this.accessToken = envService.token1 + '.' + envService.token2 + '.' + envService.token3;
@@ -50,9 +50,29 @@ export class ProjectListComponent implements AfterViewInit {
     // api mruanova/projects
     this.getProjects();
 
+    // line
+    map.on('load', () => {
+      // https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
+      console.log('Map Loaded');
+
+      let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/';
+      q += '-87.632,41.884;';
+      q += '-87.631,41.880;';
+      q += '-87.641,41.883;';
+      q += '-87.658,41.883;';
+      q += '-87.645,41.897';
+      q += '?geometries=geojson&radiuses=25;25;25;25;25&steps=true&access_token=';
+      q += this.accessToken;
+      this.driving$ = this.apiService.get(q);
+      this.driving$.subscribe((data) => {
+        const coords = data.matchings[0].geometry;
+        // Draw matching driving directions route on the map
+        map.addLayer(this.initFeatureRoute(coords));
+      });
+    });
   };
 
-  initLineString(coords) {
+  initFeatureRoute(coords) {
     const temp = {
       "id": "route",
       "type": "line",
@@ -74,6 +94,7 @@ export class ProjectListComponent implements AfterViewInit {
         "line-opacity": 0.8
       }
     };
+    // "geometry": {"type": "LineString","coordinates": coordinates}
     return temp;
   };
 
@@ -82,7 +103,7 @@ export class ProjectListComponent implements AfterViewInit {
     if (this.envService.debug) {
       console.log('API', url)
     }
-    const coordinates = []; // this.envService.center
+    const coordinates = [];
 
     // observable
     this.callback$ = this.apiService.get(url);
@@ -108,29 +129,6 @@ export class ProjectListComponent implements AfterViewInit {
       setTimeout(() => {
         this.onClick(this.projects[0])
       }, 1500);
-
-      // line
-      map.on('load', () => {
-        console.log('Map Loaded');
-        // straight lines
-        // map.addLayer(this.initLineString(coordinates));
-
-        // https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
-        let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/';
-        q += '-87.632,41.884;';
-        q += '-87.631,41.880;';
-        q += '-87.641,41.883;';
-        q += '-87.658,41.883;';
-        q += '-87.645,41.897';
-        q += '?geometries=geojson&radiuses=25;25;25;25;25&steps=true&access_token=';
-        q += this.accessToken;
-        this.driving$ = this.apiService.get(q);
-        this.driving$.subscribe((data) => {
-          const coords = data.matchings[0].geometry;
-          // Draw matching driving directions route on the map
-          this.addRoute(coords);
-        });
-      });
     });
   };
 
@@ -143,7 +141,6 @@ export class ProjectListComponent implements AfterViewInit {
       .setLngLat(project.Coordinates)
       .setPopup(popup) // sets a popup on this marker
       .addTo(map);
-    // TODO: "icon-image": "rocket-15"
   };
 
   initPopup(project) {
@@ -167,18 +164,8 @@ export class ProjectListComponent implements AfterViewInit {
     if (this.envService.debug) {
       console.log('Project Clicked', project);
     }
-    var popup = this.initPopup(project);
+    this.initPopup(project);
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.flyTo({ center: project.Coordinates });
-  };
-
-  addRoute(coords) {
-    // If a route is already loaded, remove it
-    if (map.getSource('route')) {
-      map.removeLayer('route')
-      map.removeSource('route')
-    } else {
-      map.addLayer(this.initLineString(coords));
-    };
   };
 };
