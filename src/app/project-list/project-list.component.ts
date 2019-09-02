@@ -117,15 +117,31 @@ export class ProjectListComponent implements AfterViewInit {
         // straight lines
         // map.addLayer(this.initLineString(coordinates));
 
-        // https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
+        // https://api.mapbox.com/matching/v5/mapbox/driving/
+        // -87.6328861, 41.8847953;
+        // -87.631242, 41.8802918;
+        // -87.6415771, 41.8836041;
+        // -87.6581098, 41.8835165;
+        // -87.6455885, 41.897641
+        // ?geometries=geojson&radiuses=25;25;25;25;25&steps=true
+        // &access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg
 
         // https://api.mapbox.com/matching/v5/mapbox/driving/-87.64344155711386,41.89764740828636;-87.62357175273125,41.90036255342116;-87.6235288373869,41.890044387768455?geometries=geojson&radiuses=25;25;25&steps=true&access_token=pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg
-        // draw driving directions
-        let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/-87.64344155711386,41.89764740828636;-87.62357175273125,41.90036255342116;-87.6235288373869,41.890044387768455?geometries=geojson&radiuses=25;25;25&steps=true&access_token=';
+
+        // draw matching driving directions https://docs.mapbox.com/help/tutorials/get-started-map-matching-api/
+        let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/';
+        // -87.64344155711386,41.89764740828636;-87.62357175273125,41.90036255342116;-87.6235288373869,41.890044387768455
+        q += '-87.6328861,41.8847953;';
+        q += '-87.631242,41.8802918;';
+        q += '-87.6415771,41.8836041;';
+        q += '-87.6581098,41.8835165;';
+        q += '-87.6455885,41.897641';
+        q += '?geometries=geojson&radiuses=25;25;25;25;25&steps=true&access_token=';
         q += this.accessToken;
         this.driving$ = this.apiService.get(q);
         this.driving$.subscribe((data) => {
           if (this.envService.debug) {
+            console.log('query', q);
             console.log('driving', data);
           }
           var coords = data.matchings[0].geometry;
