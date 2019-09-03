@@ -88,9 +88,9 @@ export class ProjectListComponent implements AfterViewInit {
       },
       "paint": {
         "line-color": "#03AA46",
-        "line-width": 4,
+        "line-width": 8,
         "line-opacity": 0.8,
-        'line-dasharray': [2, 2]
+        // "line-width": 4, 'line-dasharray': [2, 2]
       }
     };
     // "geometry": {"type": "LineString","coordinates": coordinates}
