@@ -155,3 +155,8 @@ app-component-sidenav{
     visibility: hidden;
   }
 }
+
+.example-header-image {
+  background-image: url('assets/img/about.jpg');
+  background-size: cover;
+}
