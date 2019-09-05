@@ -29,10 +29,29 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
   <!-- Load environment variables -->
   <script src="env.js"></script>
+  <!-- store locally -->
+  <script src='./assets/mapbox-gl.js'></script>
+  <link href='./assets/css/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
-  <app-root></app-root>
+
+  <script
+    src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js'></script>
+  <link rel='stylesheet'
+    href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css'
+    type='text/css' />
+
+  <app-root>
+    <img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 150px" />
+  </app-root>
+  <div id="map" class="container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('Document Ready');
+    }, false);
+  </script>
 </body>
 
 </html>

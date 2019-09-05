@@ -24,25 +24,8 @@
                     </div>
                     <br/>
                     <ul class="ng-trigger ng-trigger-bodyExpansion" id="panel-forms" style="display: block;">
-                        <li>
-                            <a target="_blank"
-                                href="http://www.ecoaventuramex.com/anterior/portada.html">ecoaventuramex (1999)</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mruanova.com/snippets.html">snippets javascript</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mruanova.com/snippets/">snippets css</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://medium.com/@moreissues/">Medium (blog) </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mruanova.blogspot.com/">BlogSpot (blogger) </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mruanova.wordpress.com/">WordPress (blog) </a>
-                        </li>
+                        <li>example</li>
+                        <li>example</li>
                     </ul>
                     <hr class="">
                 </nav>
@@ -80,46 +63,67 @@
                         </div>
                     </div>
                     <div class="box">
-                        <div id="map">
-                            <img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 200px" />
+                        <div id="map" class="container">
+                            <!--img alt="Loading" src="assets/img/spinner.gif" style="margin-top: 200px" /-->
                         </div>
                     </div>
                 </div>
             </mat-tab>
             <mat-tab label="About">
-                <!--<iframe src="" height="575" width="1024"></iframe>-->
-                <div style="text-align: left; padding: 20px">
-                    Mauricio Ruanova - Software Engineer<br/>
-                    <br/>
-                    This website in the front-end uses Angular<br/>
-                    to request all the projects from a RESTful<br/>
-                    web service with an Http Get method and<br/>
-                    renders the JSON response in a list and a map.<br/>
-                    <br/>
-                    In the back-end an AWS API Gateway endpoint<br/>
-                    executes a serverless Lambda function in Node.js<br/>
-                    that reads data from DynamoDB.<br/>
-                    <br/>
-                    The domain is registered in Route 53<br/>
-                    and the website is hosted in an S3 bucket.<br/>
-                    CloudFront distributes the HTTPS/SSL certificate.<br/>
-                    <br/>
-                    <a target="_blank" href="https://stackoverflow.com/users/5490782/mruanova/">Stack Overflow
-                    </a>
-                    <br/>
-                    <a target="_blank" href="https://www.linkedin.com/in/mruanova/">Linkedin</a>
-                    <br/>
-                    <a target="_blank" href="https://github.com/mruanova/">Github </a>
-                    <br/>
-                    <a style="display: inline-block;" target="_blank"
-                        href="https://link.springer.com/chapter/10.1007/11499053_28/">Papers </a>
-                    <br/>
-                    <a style="display: inline-block;" target="_blank"
-                        href="https://books.google.com/books?id=Thb6BwAAQBAJ&pg=PA206&lpg=PA206&dq=MAURICIO+RUANOVA-HURTADO&source=bl&ots=muRK4E3Oz-&sig=DGPkIF99nLw8lm8fHykqBsQU78E&hl=en&sa=X&ved=0ahUKEwjd96vDjNTbAhVm7oMKHfbxCUIQ6AEIYTAN/">Books
-                    </a>
-                    <br/>
-                    <a target="_blank" href="https://www.youtube.com/channel/UC_HW27YMfrpQeX1v5AijWSQ/">YouTube
-                        channel</a>
+                <div style="text-align: left;margin-bottom: 20px;">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>Mauricio Ruanova</mat-card-title>
+                            <mat-card-subtitle>Software Engineer</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div style="text-align: left;">
+                                This website in the front-end uses Angular<br />
+                                to request all the projects from a RESTful<br />
+                                web service with an Http Get method and<br />
+                                renders the JSON response in a list and a map.<br />
+                                <br />
+                                In the back-end an AWS API Gateway endpoint<br />
+                                executes a serverless Lambda function in Node.js<br />
+                                that reads data from DynamoDB.<br />
+                                <br />
+                                The domain is registered in Route 53<br />
+                                and the website is hosted in an S3 bucket.<br />
+                                CloudFront distributes the HTTPS/SSL certificate.
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <mat-chip-list aria-label="Fish selection">
+                                <button mat-button><a target="_blank"
+                                        href="https://www.linkedin.com/in/mruanova/">Linkedin</a></button>
+                                <button mat-button><a target="_blank"
+                                        href="https://www.youtube.com/channel/UC_HW27YMfrpQeX1v5AijWSQ/">YouTube
+                                        channel</a></button><button mat-button><a target="_blank"
+                                        href="https://stackoverflow.com/users/5490782/mruanova/">
+                                        Stack Overflow
+                                    </a></button>
+                                <button mat-button><a target="_blank" href="https://github.com/mruanova/">GitHub
+                                    </a></button>
+                                <button mat-button><a style="display: inline-block;" target="_blank"
+                                        href="https://link.springer.com/chapter/10.1007/11499053_28/">Papers
+                                    </a></button>
+                                <button mat-button><a style="display: inline-block;" target="_blank"
+                                        href="https://books.google.com/books?id=Thb6BwAAQBAJ&pg=PA206&lpg=PA206&dq=MAURICIO+RUANOVA-HURTADO&source=bl&ots=muRK4E3Oz-&sig=DGPkIF99nLw8lm8fHykqBsQU78E&hl=en&sa=X&ved=0ahUKEwjd96vDjNTbAhVm7oMKHfbxCUIQ6AEIYTAN/">Books
+                                    </a></button>
+                                <button mat-button><a target="_blank" href="https://medium.com/@moreissues/">Medium blog
+                                    </a></button>
+                                        <!--
+                                <button mat-button><a target="_blank" href="http://mruanova.com/snippets.html">snippets
+                                        javascript</a></button>
+                                <button mat-button><a target="_blank"
+                                        href="http://mruanova.com/snippets/index.html">snippets
+                                        css</a></button>
+                                <button mat-button><a target="_blank"
+                                        href="http://www.ecoaventuramex.com/anterior/portada.html">ecoaventuramex(1999)</a></button>
+                                        -->
+                            </mat-chip-list>
+                        </mat-card-actions>
+                    </mat-card>
                 </div>
             </mat-tab>
         </mat-tab-group>

@@ -299,3 +299,17 @@ $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+/*
+.mapboxgl-marker {
+  background-image: url('./assets/img/mapbox-icon.png'); 
+  background-image: url('./assets/img/rocket-15.svg'); 
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.mapboxgl-marker > svg {
+  display: none;
+}
+*/

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Display driving directions</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script
+        src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js'></script>
+    <link rel='stylesheet'
+        href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css'
+        type='text/css' />
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-87.6518932, 41.9489773],
+            zoom: 13
+        });
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+        // directions plugin
+        map.addControl(new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }), 'top-left');
+        // response
+        const json = {
+            "routes": [
+                {
+                    "geometry": "i}__Gvi~uO@vDtBCEg[aGwWfu@a]vZub@rM}Cz[Ax_Bq]~B`GkEnOPbGrAvCzIB^|~@xyAkBD~K",
+                    "legs": [
+                        {
+                            "summary": "",
+                            "weight": 1529.2,
+                            "duration": 1076,
+                            "steps": [],
+                            "distance": 8588.4
+                        }
+                    ],
+                    "weight_name": "routability",
+                    "weight": 1529.2,
+                    "duration": 1076,
+                    "distance": 8588.4
+                }
+            ],
+            "waypoints": [
+                {
+                    "distance": 12.442359661918866,
+                    "name": "",
+                    "location": [
+                        -87.650997,
+                        41.947888
+                    ]
+                },
+                {
+                    "distance": 61.21021573140122,
+                    "name": "West Chicago Avenue",
+                    "location": [
+                        -87.644986,
+                        41.896449
+                    ]
+                }
+            ],
+            "code": "Ok",
+            "uuid": "ck01p5cru0yas4cnrxyr284e3"
+        };
+        /*
+        var directions = new mapboxgl.Directions({
+            unit: 'metric',
+            profile: 'driving',
+            container: 'directions',
+            interactive: false,
+            controls: false,
+            proximity: [-117.3186111, 33.10388889]
+        });
+        console.log(directions);
+        directions.setOrigin([-117.1425, 32.63638889]);
+        directions.addWaypoint(0, [-117.1425, 32.63638889]);
+        directions.addWaypoint(1, [-117.195, 32.75416667]);
+        directions.addWaypoint(2, [-116.5616667, 32.93583333]);
+        directions.setDestination([-116.5616667, 32.93583333]);
+        map.addControl(directions);
+        */
+    </script>
+
+</body>
+
+</html>

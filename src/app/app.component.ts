@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit() {
+    /*
     const key1 = 'AIzaSyBrRJ6sdmTmH4a';
     const key2 = 'VSGLT8xA8dC3J66CEaA0';
     const url = 'https://maps.googleapis.com/maps/api/js?key=' + key1 + key2;
@@ -45,17 +46,6 @@ export class AppComponent implements OnInit {
     script.type = 'text/javascript';
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
-    // <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-    // <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
-    /*
-    <div id='map' style='width: 400px; height: 300px;'></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9.2iSMaogLhpWWMBql2_SBFg';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-    });
-    </script>
     */
   }
 };

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnvService } from '../env.service';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent {
   j: number = 0;
   interval: number;
 
-  constructor() {
+  constructor(private envService: EnvService) {
     if (this.interval) {
       clearInterval(this.interval);
     }
