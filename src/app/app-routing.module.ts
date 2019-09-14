@@ -6,9 +6,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'products', component: ProductListComponent, pathMatch: 'full' },
-  { path: 'products/new', component: ProductNewComponent, pathMatch: 'full' },
-  { path: 'products/edit/:id', component: ProductEditComponent, pathMatch: 'full' },
+  { path: 'projects', component: ProductListComponent, pathMatch: 'full' },
+  { path: 'projects/new', component: ProductNewComponent, pathMatch: 'full' },
+  { path: 'projects/edit/:id', component: ProductEditComponent, pathMatch: 'full' },
   { path: '**', component: HomeComponent, pathMatch: 'prefix' },
 ];
 

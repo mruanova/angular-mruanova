@@ -1,5 +1,5 @@
 <div class="component">
-  <h3>Create a New Product</h3>
+  <h3>Create a New Project</h3>
   <form (submit)="create()" #formData="ngForm">
     <table>
       <tbody>
@@ -13,10 +13,10 @@
         </tr>
         <tr>
           <td class="columnLeft">
-            <label for="">Price:</label>
+            <label for="">Position:</label>
           </td>
           <td class="columnRight">
-            <input type="number" name="price" required [(ngModel)]="newProduct.price">
+            <input type="number" name="position" required [(ngModel)]="newProduct.position">
           </td>
         </tr>
         <tr>

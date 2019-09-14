@@ -34,7 +34,7 @@ export class ProductNewComponent implements OnInit {
     this.products.push(this.newProduct);
     this._produceService.updateProducts(this.products);
     this.newProduct = new Product();
-    this._router.navigate(['/products']);
+    this._router.navigate(['/projects']);
   };
 
 };

@@ -1,5 +1,5 @@
 <div class="component">
-  <h3>Edit Product</h3>
+  <h3>Edit Project</h3>
   <form (submit)="update()" #formData="ngForm">
     <table>
       <tbody>
@@ -13,10 +13,10 @@
         </tr>
         <tr>
           <td class="columnLeft">
-            <label for="">Price:</label>
+            <label for="">Position:</label>
           </td>
           <td class="columnRight">
-            <input type="number" name="price" required [(ngModel)]="product.price">
+            <input type="number" name="position" required [(ngModel)]="product.position">
           </td>
         </tr>
         <tr>

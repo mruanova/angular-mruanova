@@ -3,10 +3,10 @@
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar>
-          <img *ngIf="product.imgUrl" [src]="product.imgUrl" alt="avatar" style="height:40px;width:40px;">
+          <img *ngIf="product.imgUrl" [src]="product.imgUrl" alt="avatar" style="height:50px;width:50px;">
         </div>
         <mat-card-title>{{product.title}}</mat-card-title>
-        <mat-card-subtitle>{{product.price | currency }}</mat-card-subtitle>
+        <mat-card-subtitle>{{product.position }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div class='container'>
@@ -17,7 +17,7 @@
         <h3 class='imgRep' *ngIf="!product.imgUrl">No Image Available.</h3>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button [routerLink]="['/products', 'edit', product.id]">EDIT</button>
+        <button mat-button [routerLink]="['/projects', 'edit', product.id]">EDIT</button>
         <button mat-button (click)="deleteProduct(product)">DELETE</button>
       </mat-card-actions>
     </mat-card>

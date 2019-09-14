@@ -40,7 +40,7 @@ export class ProductEditComponent implements OnInit {
   
   update(){
     this._productService.updateProducts(this.products);
-    this._router.navigate(['/products']);
+    this._router.navigate(['/projects']);
   };
 
 };
