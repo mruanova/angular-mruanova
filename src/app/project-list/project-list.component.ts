@@ -18,7 +18,10 @@ export class ProjectListComponent implements AfterViewInit {
   callback$: Observable<any>; // async
   driving$: Observable<any>;
 
-  constructor(private apiService: ApiService, private envService: EnvService) {
+  constructor(
+    private envService: EnvService,
+    private apiService: ApiService
+  ) {
     this.accessToken = envService.token1 + '.' + envService.token2 + '.' + envService.token3;
     localStorage.setItem('MapboxAccessToken', this.accessToken);
   };
@@ -52,7 +55,7 @@ export class ProjectListComponent implements AfterViewInit {
     // line
     map.on('load', () => {
       console.log('Map Loaded');
-
+      /* matching driving
       let q = 'https://api.mapbox.com/matching/v5/mapbox/driving/';
       q += '-87.632,41.884;';
       q += '-87.631,41.880;';
@@ -61,11 +64,27 @@ export class ProjectListComponent implements AfterViewInit {
       q += '-87.645,41.897';
       q += '?geometries=geojson&radiuses=25;25;25;25;25&steps=true&access_token=';
       q += this.accessToken;
+      */
+      // directions driving
+      let q = 'https://api.mapbox.com/directions/v5/mapbox/driving/';
+      q += '-99.205,19.430;'; // dickens -99.205358, 19.430442
+      q += '-87.645,41.897'; // echo 87.6455885, 41.897641
+      q += '?geometries=geojson&steps=true&overview=full&language=en';
+      q += '&access_token=';//polyline
+      q += this.accessToken;
       this.driving$ = this.apiService.get(q);
       this.driving$.subscribe((data) => {
-        const coords = data.matchings[0].geometry;
-        // Draw matching driving directions route on the map
-        const layer = map.addLayer(this.initFeatureRoute(coords));
+        if (data.matchings && data.matchings.length > 0) {
+          const coords = data.matchings[0].geometry;
+          // Draw matching driving directions route on the map
+          map.addLayer(this.initFeatureRoute(coords));
+        } else if (data.routes && data.routes.length > 0) {
+          const coords = data.routes[0].geometry;
+          // Draw matching driving directions route on the map
+          map.addLayer(this.initFeatureRoute(coords));
+        } else {
+          console.log('driving-data', data);
+        }
       });
     });
   };
