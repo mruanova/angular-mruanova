@@ -14,8 +14,8 @@
     window.__env.mapbox url = 'https://maps.googleapis.com/maps/api/js?key='+key1+key2;
     */
     // mapbox
-    window.__env.center = [-87.6518932, 41.9489773];
-    window.__env.zoom = 12.5; // 12.5;
+    window.__env.center = [-99.205,19.430];
+    window.__env.zoom = 12.5;
     window.__env.token1 = 'pk';
     window.__env.token2 = 'eyJ1IjoibXJ1YW5vdmEiLCJhIjoiY2p6dWs2YmcxMDVmYTNocGZ2Z2hiMDlqYiJ9';
     window.__env.token3 = '2iSMaogLhpWWMBql2_SBFg';
