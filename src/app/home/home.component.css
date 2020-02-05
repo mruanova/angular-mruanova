@@ -157,6 +157,6 @@ app-component-sidenav{
 }
 
 .example-header-image {
-  background-image: url('assets/img/about.jpg');
+  background-image: url('../../assets/img/about.jpg');
   background-size: cover;
 }

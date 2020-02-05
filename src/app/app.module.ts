@@ -61,9 +61,9 @@ import { MatTreeModule } from '@angular/material/tree';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatBadgeModule,
