@@ -131,7 +131,7 @@ export class ProjectListComponent implements AfterViewInit {
       }
 
       // sort
-      this.projects = response.Items.sort((a, b) => {
+      this.projects = response.body.Items.sort((a, b) => {
         return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
       });
 
