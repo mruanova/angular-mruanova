@@ -56,3 +56,11 @@ sudo n latest
 ## Windows:
 
 just reinstall node from the .msi in Windows from the node website.
+
+# lightning
+
+http://ng-lightning.github.io/ng-lightning/#/get-started
+
+npm i @salesforce-ux/design-system
+
+yarn add @salesforce-ux/design-system

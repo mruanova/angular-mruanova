@@ -49,4 +49,7 @@ export class HomeComponent {
       }
     }
   };
+  open(){
+    console.log('open');
+  };
 };

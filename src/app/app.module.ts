@@ -1,6 +1,7 @@
 //modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NglModule } from 'ng-lightning';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -50,6 +51,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { NGL_ICON_CONFIG, NglIconConfig } from 'ng-lightning';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +63,7 @@ import { MatTreeModule } from '@angular/material/tree';
     ProjectListComponent
   ],
   imports: [
+    NglModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -101,7 +105,9 @@ import { MatTreeModule } from '@angular/material/tree';
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [ApiService, ProductService, EnvServiceProvider],
+  providers: [ApiService, ProductService, EnvServiceProvider,
+    { provide: NGL_ICON_CONFIG, useValue: <NglIconConfig>{ svgPath: '/my/path' } },
+  ],
   bootstrap: [AppComponent]
 })
 

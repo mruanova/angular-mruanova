@@ -42,7 +42,9 @@
                     </div>
                     <div class="box">
                         <div class="about">
-                            INTERACTIVE: Click on a project from the list to update map:
+                            <button style="height:15px" type="button" nglButton [nglPopover]="tip" nglPopoverPlacement="right"
+                                [(nglPopoverOpen)]="open">Click me</button>
+                            <ng-template #tip>Click on a project from the list to update map.</ng-template>
                         </div>
                         <div class="projects">
                             <ul>
@@ -78,10 +80,10 @@
                                 <br />
                                 The domain is registered in Route 53<br />
                                 and the website is hosted in an S3 bucket.<br />
-                                CloudFront distributes the HTTPS/SSL certificate.<br/>
-                                <br/>
-                                I also have experience with Docker containers,<br/>
-                                Kubernetes, Direct Connect, Docker, EC2.<br/>
+                                CloudFront distributes the HTTPS/SSL certificate.<br />
+                                <br />
+                                I also have experience with Docker containers,<br />
+                                Kubernetes, Direct Connect, Docker, EC2.<br />
                                 Cloud Watch, Cloud Trail, Cloud Formation.
                             </div>
                         </mat-card-content>

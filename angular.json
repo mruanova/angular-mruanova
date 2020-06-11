@@ -24,10 +24,17 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@salesforce-ux/design-system/assets/",
+                "output": "/assets"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css",
+              "node_modules/@angular/cdk/overlay-prebuilt.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
@@ -89,10 +96,17 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@salesforce-ux/design-system/assets/",
+                "output": "/assets"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css",
+              "node_modules/@angular/cdk/overlay-prebuilt.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
