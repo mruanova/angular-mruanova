@@ -160,3 +160,7 @@ app-component-sidenav{
   background-image: url('../../assets/img/about.jpg');
   background-size: cover;
 }
+
+.interactive {
+  height: 25px;
+}
