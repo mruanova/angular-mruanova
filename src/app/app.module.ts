@@ -19,6 +19,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 /*
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -42,14 +44,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 */
@@ -73,6 +73,8 @@ import { NGL_ICON_CONFIG, NglIconConfig } from 'ng-lightning';
     BrowserAnimationsModule,
     MatCardModule,
     MatChipsModule,
+    MatSidenavModule,
+    MatTabsModule,
     MatToolbarModule,
     /* 
     MatAutocompleteModule,
@@ -97,14 +99,12 @@ import { NGL_ICON_CONFIG, NglIconConfig } from 'ng-lightning';
     MatRadioModule,
     MatRippleModule,
     MatSelectModule,
-    MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
     MatSortModule,
     MatStepperModule,
     MatTableModule,
-    MatTabsModule,
     MatTooltipModule,
     MatTreeModule,
     */
